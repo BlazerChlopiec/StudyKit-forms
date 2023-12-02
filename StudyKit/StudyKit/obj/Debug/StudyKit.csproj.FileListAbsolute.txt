@@ -13,3 +13,18 @@ E:\yt blazer yt\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.CoreCompileInputs.ca
 E:\yt blazer yt\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.CopyComplete
 E:\yt blazer yt\StudyKit\StudyKit\obj\Debug\StudyKit.exe
 E:\yt blazer yt\StudyKit\StudyKit\obj\Debug\StudyKit.pdb
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\bin\Debug\StudyKit.exe.config
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\bin\Debug\StudyKit.exe
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\bin\Debug\StudyKit.pdb
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\bin\Debug\Newtonsoft.Json.dll
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\bin\Debug\Newtonsoft.Json.xml
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.AssemblyReference.cache
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.SuggestedBindingRedirects.cache
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.BaseForm.resources
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.EditForm.resources
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.Properties.Resources.resources
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.GenerateResource.cache
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.CoreCompileInputs.cache
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.csproj.CopyComplete
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.exe
+C:\Users\blaze\d\StudyKit-forms\StudyKit\StudyKit\obj\Debug\StudyKit.pdb

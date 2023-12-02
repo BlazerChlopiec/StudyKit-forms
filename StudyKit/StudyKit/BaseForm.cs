@@ -79,11 +79,6 @@ namespace StudyKit
 			textBox.Focus();
 
 			checkButton.Enabled = true;
-			specialCharacter1.Enabled = true;
-			specialCharacter2.Enabled = true;
-			specialCharacter3.Enabled = true;
-			specialCharacter4.Enabled = true;
-			specialCharacter5.Enabled = true;
 
 			previousPrompt = currentPrompt;
 			currentPrompt = GetRandomPrompt();

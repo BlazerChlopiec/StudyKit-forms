@@ -34,11 +34,6 @@
 			this.promptLabel = new System.Windows.Forms.Label();
 			this.correctLabel = new System.Windows.Forms.Label();
 			this.bobibenLabel = new System.Windows.Forms.Label();
-			this.specialCharacter1 = new System.Windows.Forms.Button();
-			this.specialCharacter2 = new System.Windows.Forms.Button();
-			this.specialCharacter3 = new System.Windows.Forms.Button();
-			this.specialCharacter4 = new System.Windows.Forms.Button();
-			this.specialCharacter5 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// editButton
@@ -102,76 +97,11 @@
 			this.bobibenLabel.TabIndex = 4;
 			this.bobibenLabel.Text = "Bobi Ben Productions";
 			// 
-			// specialCharacter1
-			// 
-			this.specialCharacter1.Enabled = false;
-			this.specialCharacter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.specialCharacter1.Location = new System.Drawing.Point(91, 128);
-			this.specialCharacter1.Name = "specialCharacter1";
-			this.specialCharacter1.Size = new System.Drawing.Size(37, 23);
-			this.specialCharacter1.TabIndex = 5;
-			this.specialCharacter1.Text = "ä";
-			this.specialCharacter1.UseVisualStyleBackColor = true;
-			this.specialCharacter1.Click += new System.EventHandler(this.specialCharacter1_Click);
-			// 
-			// specialCharacter2
-			// 
-			this.specialCharacter2.Enabled = false;
-			this.specialCharacter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.specialCharacter2.Location = new System.Drawing.Point(134, 128);
-			this.specialCharacter2.Name = "specialCharacter2";
-			this.specialCharacter2.Size = new System.Drawing.Size(37, 23);
-			this.specialCharacter2.TabIndex = 6;
-			this.specialCharacter2.Text = "ö";
-			this.specialCharacter2.UseVisualStyleBackColor = true;
-			this.specialCharacter2.Click += new System.EventHandler(this.specialCharacter2_Click);
-			// 
-			// specialCharacter3
-			// 
-			this.specialCharacter3.Enabled = false;
-			this.specialCharacter3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.specialCharacter3.Location = new System.Drawing.Point(177, 128);
-			this.specialCharacter3.Name = "specialCharacter3";
-			this.specialCharacter3.Size = new System.Drawing.Size(37, 23);
-			this.specialCharacter3.TabIndex = 7;
-			this.specialCharacter3.Text = "ü";
-			this.specialCharacter3.UseVisualStyleBackColor = true;
-			this.specialCharacter3.Click += new System.EventHandler(this.specialCharacter3_Click);
-			// 
-			// specialCharacter4
-			// 
-			this.specialCharacter4.Enabled = false;
-			this.specialCharacter4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.specialCharacter4.Location = new System.Drawing.Point(220, 128);
-			this.specialCharacter4.Name = "specialCharacter4";
-			this.specialCharacter4.Size = new System.Drawing.Size(37, 23);
-			this.specialCharacter4.TabIndex = 8;
-			this.specialCharacter4.Text = "ß";
-			this.specialCharacter4.UseVisualStyleBackColor = true;
-			this.specialCharacter4.Click += new System.EventHandler(this.specialCharacter4_Click);
-			// 
-			// specialCharacter5
-			// 
-			this.specialCharacter5.Enabled = false;
-			this.specialCharacter5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.specialCharacter5.Location = new System.Drawing.Point(263, 128);
-			this.specialCharacter5.Name = "specialCharacter5";
-			this.specialCharacter5.Size = new System.Drawing.Size(37, 23);
-			this.specialCharacter5.TabIndex = 9;
-			this.specialCharacter5.Text = "-̈";
-			this.specialCharacter5.UseVisualStyleBackColor = true;
-			this.specialCharacter5.Click += new System.EventHandler(this.specialCharacter5_Click);
-			// 
 			// BaseForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(397, 357);
-			this.Controls.Add(this.specialCharacter5);
-			this.Controls.Add(this.specialCharacter4);
-			this.Controls.Add(this.specialCharacter3);
-			this.Controls.Add(this.specialCharacter2);
-			this.Controls.Add(this.specialCharacter1);
 			this.Controls.Add(this.bobibenLabel);
 			this.Controls.Add(this.correctLabel);
 			this.Controls.Add(this.promptLabel);
@@ -196,11 +126,6 @@
 		public System.Windows.Forms.Label promptLabel;
 		public System.Windows.Forms.Label correctLabel;
 		private System.Windows.Forms.Label bobibenLabel;
-		public System.Windows.Forms.Button specialCharacter1;
-		public System.Windows.Forms.Button specialCharacter2;
-		public System.Windows.Forms.Button specialCharacter3;
-		public System.Windows.Forms.Button specialCharacter4;
-		public System.Windows.Forms.Button specialCharacter5;
 	}
 }
 
