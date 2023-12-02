@@ -1,0 +1,15 @@
+E:\yt blazer yt\StudyKit\StudyKit\bin\Release\StudyKit.exe.config
+E:\yt blazer yt\StudyKit\StudyKit\bin\Release\StudyKit.exe
+E:\yt blazer yt\StudyKit\StudyKit\bin\Release\StudyKit.pdb
+E:\yt blazer yt\StudyKit\StudyKit\bin\Release\Newtonsoft.Json.dll
+E:\yt blazer yt\StudyKit\StudyKit\bin\Release\Newtonsoft.Json.xml
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.csproj.AssemblyReference.cache
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.csproj.SuggestedBindingRedirects.cache
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.BaseForm.resources
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.EditForm.resources
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.Properties.Resources.resources
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.csproj.GenerateResource.cache
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.csproj.CoreCompileInputs.cache
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.csproj.CopyComplete
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.exe
+E:\yt blazer yt\StudyKit\StudyKit\obj\Release\StudyKit.pdb
