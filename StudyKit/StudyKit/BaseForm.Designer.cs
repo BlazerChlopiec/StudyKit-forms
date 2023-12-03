@@ -33,7 +33,6 @@
 			this.textBox = new System.Windows.Forms.TextBox();
 			this.promptLabel = new System.Windows.Forms.Label();
 			this.correctLabel = new System.Windows.Forms.Label();
-			this.bobibenLabel = new System.Windows.Forms.Label();
 			this.specialCharacter1 = new System.Windows.Forms.Button();
 			this.specialCharacter2 = new System.Windows.Forms.Button();
 			this.specialCharacter3 = new System.Windows.Forms.Button();
@@ -91,16 +90,6 @@
 			this.correctLabel.Text = "---";
 			this.correctLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.correctLabel.Visible = false;
-			// 
-			// bobibenLabel
-			// 
-			this.bobibenLabel.AutoSize = true;
-			this.bobibenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.bobibenLabel.Location = new System.Drawing.Point(276, 335);
-			this.bobibenLabel.Name = "bobibenLabel";
-			this.bobibenLabel.Size = new System.Drawing.Size(109, 13);
-			this.bobibenLabel.TabIndex = 4;
-			this.bobibenLabel.Text = "Bobi Ben Productions";
 			// 
 			// specialCharacter1
 			// 
@@ -172,7 +161,6 @@
 			this.Controls.Add(this.specialCharacter3);
 			this.Controls.Add(this.specialCharacter2);
 			this.Controls.Add(this.specialCharacter1);
-			this.Controls.Add(this.bobibenLabel);
 			this.Controls.Add(this.correctLabel);
 			this.Controls.Add(this.promptLabel);
 			this.Controls.Add(this.textBox);
@@ -195,7 +183,6 @@
 		public System.Windows.Forms.TextBox textBox;
 		public System.Windows.Forms.Label promptLabel;
 		public System.Windows.Forms.Label correctLabel;
-		private System.Windows.Forms.Label bobibenLabel;
 		public System.Windows.Forms.Button specialCharacter1;
 		public System.Windows.Forms.Button specialCharacter2;
 		public System.Windows.Forms.Button specialCharacter3;
