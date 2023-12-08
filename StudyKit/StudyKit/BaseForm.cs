@@ -108,15 +108,5 @@ namespace StudyKit
 
 			return validPrompts[value];
 		}
-
-		private void specialCharacter1_Click(object sender, EventArgs e) => textBox.Text += "ä";
-
-		private void specialCharacter2_Click(object sender, EventArgs e) => textBox.Text += "ö";
-
-		private void specialCharacter3_Click(object sender, EventArgs e) => textBox.Text += "ü";
-
-		private void specialCharacter4_Click(object sender, EventArgs e) => textBox.Text += "ß";
-
-		private void specialCharacter5_Click(object sender, EventArgs e) => textBox.Text += "-̈";
 	}
 }
