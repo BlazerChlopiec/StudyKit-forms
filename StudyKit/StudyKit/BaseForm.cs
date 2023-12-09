@@ -26,17 +26,6 @@ namespace StudyKit
 
 			editForm = new EditForm();
 			editForm.baseForm = this;
-
-			textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
-			void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-			{
-				if (e.KeyChar == (char)Keys.Return)
-
-				{
-					e.Handled = true;
-					ProcessAnswer();
-				}
-			}
 		}
 
 		private void editButton_click(object sender, System.EventArgs e) => editForm.Show();
@@ -44,6 +33,12 @@ namespace StudyKit
 		private void quitButton_Click(object sender, EventArgs e) => Application.Exit();
 
 		private void checkButton_Click(object sender, EventArgs e) => ProcessAnswer();
+
+		private void optionPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			ReleaseCapture();
+			SendMessage(Handle, 0x112, 0xf012, 0);
+		}
 
 		private void ProcessAnswer()
 		{
@@ -118,10 +113,17 @@ namespace StudyKit
 			return validPrompts[value];
 		}
 
-		private void optionPanel_MouseDown(object sender, MouseEventArgs e)
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
-			ReleaseCapture();
-			SendMessage(Handle, 0x112, 0xf012, 0);
+			if (ActiveControl == textBox && keyData == Keys.Return)
+			{
+				ProcessAnswer();
+				return true;
+			}
+			else
+			{
+				return base.ProcessCmdKey(ref msg, keyData);
+			}
 		}
 	}
 }

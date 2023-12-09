@@ -74,7 +74,7 @@
 			// textBox
 			// 
 			this.textBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.textBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+			this.textBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
 			this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.textBox.Enabled = false;
