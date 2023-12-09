@@ -55,19 +55,6 @@ namespace StudyKit.UserControls
 			};
 		}
 
-
-
-		//protected override void OnFormClosing(FormClosingEventArgs e)
-		//{
-		//	base.OnFormClosing(e);
-		//	if (e.CloseReason == CloseReason.UserClosing)
-		//	{
-		//		e.Cancel = true;
-		//		uc_study.RefreshPrompt();
-		//		Hide();
-		//	}
-		//}
-
 		private void addPromptButton_Click(object sender, EventArgs e) => AddPrompt();
 
 		private void AddPrompt(string promptText = "Default", string correctAnswer = "DefaultAnswer", CheckState checkState = CheckState.Checked)
