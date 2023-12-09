@@ -75,6 +75,8 @@ namespace StudyKit
 			// 
 			// editPromptTextBox
 			// 
+			this.editPromptTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.editPromptTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
 			this.editPromptTextBox.Location = new System.Drawing.Point(15, 318);
 			this.editPromptTextBox.Name = "editPromptTextBox";
 			this.editPromptTextBox.Size = new System.Drawing.Size(361, 20);
@@ -91,6 +93,8 @@ namespace StudyKit
 			// 
 			// editPromptAnswerTextBox
 			// 
+			this.editPromptAnswerTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.editPromptAnswerTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
 			this.editPromptAnswerTextBox.Location = new System.Drawing.Point(15, 344);
 			this.editPromptAnswerTextBox.Name = "editPromptAnswerTextBox";
 			this.editPromptAnswerTextBox.Size = new System.Drawing.Size(361, 20);
