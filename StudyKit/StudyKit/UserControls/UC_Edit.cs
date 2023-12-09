@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace StudyKit
+namespace StudyKit.UserControls
 {
-	public partial class EditForm : Form
+	public partial class UC_Edit : UserControl
 	{
-		public BaseForm baseForm;
+		public UC_Study uc_study;
 
 		Prompt currentlyEditedPrompt;
 
-		public EditForm()
+		public UC_Edit()
 		{
 			InitializeComponent();
 
@@ -55,16 +55,18 @@ namespace StudyKit
 			};
 		}
 
-		protected override void OnFormClosing(FormClosingEventArgs e)
-		{
-			base.OnFormClosing(e);
-			if (e.CloseReason == CloseReason.UserClosing)
-			{
-				e.Cancel = true;
-				baseForm.RefreshPrompt();
-				Hide();
-			}
-		}
+
+
+		//protected override void OnFormClosing(FormClosingEventArgs e)
+		//{
+		//	base.OnFormClosing(e);
+		//	if (e.CloseReason == CloseReason.UserClosing)
+		//	{
+		//		e.Cancel = true;
+		//		uc_study.RefreshPrompt();
+		//		Hide();
+		//	}
+		//}
 
 		private void addPromptButton_Click(object sender, EventArgs e) => AddPrompt();
 
@@ -131,7 +133,7 @@ namespace StudyKit
 			promptItemList.SelectedIndex = promptItemList.Items.Count - 1;
 		}
 
-		private void EditForm_KeyDown(object sender, KeyEventArgs e)
+		private void UC_Edit_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
 			{
