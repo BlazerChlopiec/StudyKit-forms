@@ -104,5 +104,7 @@ namespace StudyKit.UserControls
 
 			return validPrompts[value];
 		}
+
+		private void checkButton_Click(object sender, EventArgs e) => ProcessAnswer();
 	}
 }

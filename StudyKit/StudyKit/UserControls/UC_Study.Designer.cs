@@ -36,10 +36,9 @@
 			// 
 			// correctLabel
 			// 
-			this.correctLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
 			this.correctLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
 			this.correctLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-			this.correctLabel.Location = new System.Drawing.Point(158, 254);
+			this.correctLabel.Location = new System.Drawing.Point(158, 282);
 			this.correctLabel.Name = "correctLabel";
 			this.correctLabel.Size = new System.Drawing.Size(313, 63);
 			this.correctLabel.TabIndex = 3;
@@ -52,7 +51,7 @@
 			this.promptLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
 			this.promptLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
 			this.promptLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.promptLabel.Location = new System.Drawing.Point(158, 130);
+			this.promptLabel.Location = new System.Drawing.Point(158, 158);
 			this.promptLabel.Name = "promptLabel";
 			this.promptLabel.Size = new System.Drawing.Size(313, 63);
 			this.promptLabel.TabIndex = 4;
@@ -68,7 +67,7 @@
 			this.textBox.Enabled = false;
 			this.textBox.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 24.29F, System.Drawing.FontStyle.Bold);
 			this.textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
-			this.textBox.Location = new System.Drawing.Point(104, 196);
+			this.textBox.Location = new System.Drawing.Point(104, 224);
 			this.textBox.Name = "textBox";
 			this.textBox.Size = new System.Drawing.Size(371, 39);
 			this.textBox.TabIndex = 5;
@@ -83,12 +82,13 @@
 			this.checkButton.FlatAppearance.BorderSize = 0;
 			this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.checkButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
-			this.checkButton.Location = new System.Drawing.Point(491, 196);
+			this.checkButton.Location = new System.Drawing.Point(491, 224);
 			this.checkButton.Name = "checkButton";
 			this.checkButton.Size = new System.Drawing.Size(39, 39);
 			this.checkButton.TabIndex = 6;
 			this.checkButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
 			this.checkButton.UseVisualStyleBackColor = false;
+			this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
 			// 
 			// UC_Study
 			// 

@@ -1,5 +1,6 @@
 ﻿using StudyKit.UserControls;
 using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -9,6 +10,9 @@ namespace StudyKit
 	{
 		UC_Study uc_study;
 		UC_Edit uc_edit;
+
+		Button currentButton;
+		Color previousButtonColor;
 
 		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
 		private extern static void ReleaseCapture();
@@ -27,6 +31,8 @@ namespace StudyKit
 			uc_edit.uc_study = uc_study;
 
 			uc_study.uc_edit = uc_edit;
+
+			DarkenButtonAndLock(studyButton);
 		}
 
 		private void AddUserControl(UserControl uc)
@@ -37,22 +43,41 @@ namespace StudyKit
 			uc.BringToFront();
 		}
 
-		private void editButton_click(object sender, System.EventArgs e) => AddUserControl(uc_edit);
+		private void editButton_click(object sender, System.EventArgs e)
+		{
+			AddUserControl(uc_edit);
+			DarkenButtonAndLock(sender);
+		}
 
 		private void studyButton_Click(object sender, EventArgs e)
 		{
 			AddUserControl(uc_study);
 			if (uc_study.currentPrompt == null) uc_study.RefreshPrompt();
+			DarkenButtonAndLock(sender);
 		}
 
 		private void quitButton_Click(object sender, EventArgs e) => Application.Exit();
-
-		private void checkButton_Click(object sender, EventArgs e) => uc_study.ProcessAnswer();
 
 		private void optionPanel_MouseDown(object sender, MouseEventArgs e)
 		{
 			ReleaseCapture();
 			SendMessage(Handle, 0x112, 0xf012, 0);
+		}
+
+		private void DarkenButtonAndLock(object sender)
+		{
+			if (currentButton != null) currentButton.Enabled = true;
+			if (previousButtonColor != Color.Empty) currentButton.BackColor = previousButtonColor;
+
+			currentButton = sender as Button;
+
+			currentButton.Enabled = false;
+			previousButtonColor = currentButton.BackColor;
+
+			var proc = .4f;
+			currentButton.BackColor = Color.FromArgb((int)(currentButton.BackColor.R * (1f - proc)),
+													(int)(currentButton.BackColor.G * (1f - proc)),
+													(int)(currentButton.BackColor.B * (1f - proc)));
 		}
 	}
 }
