@@ -42,6 +42,7 @@
 			// editButton
 			// 
 			this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(204)))), ((int)(((byte)(137)))));
+			this.editButton.FlatAppearance.BorderSize = 0;
 			this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.editButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.editButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -56,13 +57,17 @@
 			// checkButton
 			// 
 			this.checkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(204)))), ((int)(((byte)(137)))));
+			this.checkButton.BackgroundImage = global::StudyKit.Properties.Resources.arrow;
+			this.checkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.checkButton.Enabled = false;
+			this.checkButton.FlatAppearance.BorderSize = 0;
 			this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.checkButton.Location = new System.Drawing.Point(461, 205);
+			this.checkButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
+			this.checkButton.Location = new System.Drawing.Point(488, 205);
 			this.checkButton.Name = "checkButton";
 			this.checkButton.Size = new System.Drawing.Size(39, 39);
 			this.checkButton.TabIndex = 2;
+			this.checkButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
 			this.checkButton.UseVisualStyleBackColor = false;
 			this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
 			// 
@@ -73,14 +78,14 @@
 			this.textBox.Enabled = false;
 			this.textBox.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 24.29F, System.Drawing.FontStyle.Bold);
 			this.textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
-			this.textBox.Location = new System.Drawing.Point(146, 205);
+			this.textBox.Location = new System.Drawing.Point(101, 205);
 			this.textBox.Name = "textBox";
-			this.textBox.Size = new System.Drawing.Size(309, 39);
+			this.textBox.Size = new System.Drawing.Size(371, 39);
 			this.textBox.TabIndex = 1;
 			// 
 			// promptLabel
 			// 
-			this.promptLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.promptLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
 			this.promptLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.promptLabel.Location = new System.Drawing.Point(155, 139);
 			this.promptLabel.Name = "promptLabel";
@@ -91,7 +96,7 @@
 			// 
 			// correctLabel
 			// 
-			this.correctLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.correctLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
 			this.correctLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
 			this.correctLabel.Location = new System.Drawing.Point(155, 263);
 			this.correctLabel.Name = "correctLabel";
@@ -117,6 +122,7 @@
 			// quitButton
 			// 
 			this.quitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
+			this.quitButton.FlatAppearance.BorderSize = 0;
 			this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.quitButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.quitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -131,6 +137,7 @@
 			// studyButton
 			// 
 			this.studyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(82)))), ((int)(((byte)(204)))));
+			this.studyButton.FlatAppearance.BorderSize = 0;
 			this.studyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.studyButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.studyButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
