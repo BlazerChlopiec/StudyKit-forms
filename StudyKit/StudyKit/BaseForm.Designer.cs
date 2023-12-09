@@ -42,7 +42,7 @@
 			this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.editButton.FlatAppearance.BorderSize = 0;
 			this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.editButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.editButton.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold);
 			this.editButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.editButton.Location = new System.Drawing.Point(159, 26);
 			this.editButton.Name = "editButton";
@@ -71,7 +71,7 @@
 			this.quitButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.quitButton.FlatAppearance.BorderSize = 0;
 			this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.quitButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.quitButton.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold);
 			this.quitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.quitButton.Location = new System.Drawing.Point(487, 26);
 			this.quitButton.Name = "quitButton";
@@ -87,7 +87,7 @@
 			this.studyButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.studyButton.FlatAppearance.BorderSize = 0;
 			this.studyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.studyButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.studyButton.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold);
 			this.studyButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.studyButton.Location = new System.Drawing.Point(24, 26);
 			this.studyButton.Name = "studyButton";

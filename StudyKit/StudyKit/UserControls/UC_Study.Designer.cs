@@ -36,7 +36,7 @@
 			// 
 			// correctLabel
 			// 
-			this.correctLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
+			this.correctLabel.Font = new System.Drawing.Font("Yu Gothic", 21.27F, System.Drawing.FontStyle.Bold);
 			this.correctLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
 			this.correctLabel.Location = new System.Drawing.Point(158, 282);
 			this.correctLabel.Name = "correctLabel";
@@ -49,7 +49,7 @@
 			// promptLabel
 			// 
 			this.promptLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
-			this.promptLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
+			this.promptLabel.Font = new System.Drawing.Font("Yu Gothic", 21.27F, System.Drawing.FontStyle.Bold);
 			this.promptLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.promptLabel.Location = new System.Drawing.Point(158, 158);
 			this.promptLabel.Name = "promptLabel";
@@ -65,11 +65,11 @@
 			this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
 			this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.textBox.Enabled = false;
-			this.textBox.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 24.29F, System.Drawing.FontStyle.Bold);
+			this.textBox.Font = new System.Drawing.Font("Yu Gothic", 24.29F, System.Drawing.FontStyle.Bold);
 			this.textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
 			this.textBox.Location = new System.Drawing.Point(104, 224);
 			this.textBox.Name = "textBox";
-			this.textBox.Size = new System.Drawing.Size(371, 39);
+			this.textBox.Size = new System.Drawing.Size(371, 52);
 			this.textBox.TabIndex = 5;
 			// 
 			// checkButton
