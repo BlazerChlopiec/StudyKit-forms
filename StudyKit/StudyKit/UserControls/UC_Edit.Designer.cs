@@ -44,48 +44,65 @@
 			// 
 			// promptItemList
 			// 
+			this.promptItemList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+			this.promptItemList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.promptItemList.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 12.25F, System.Drawing.FontStyle.Bold);
+			this.promptItemList.ForeColor = System.Drawing.Color.White;
 			this.promptItemList.FormattingEnabled = true;
-			this.promptItemList.Location = new System.Drawing.Point(139, 53);
+			this.promptItemList.Location = new System.Drawing.Point(38, 152);
 			this.promptItemList.Name = "promptItemList";
-			this.promptItemList.Size = new System.Drawing.Size(364, 199);
+			this.promptItemList.Size = new System.Drawing.Size(364, 160);
 			this.promptItemList.TabIndex = 0;
 			this.promptItemList.TabStop = false;
 			// 
 			// promptsLabel
 			// 
 			this.promptsLabel.AutoSize = true;
-			this.promptsLabel.Location = new System.Drawing.Point(144, 33);
+			this.promptsLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.promptsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+			this.promptsLabel.Location = new System.Drawing.Point(43, 126);
 			this.promptsLabel.Name = "promptsLabel";
-			this.promptsLabel.Size = new System.Drawing.Size(48, 13);
+			this.promptsLabel.Size = new System.Drawing.Size(101, 23);
 			this.promptsLabel.TabIndex = 1;
 			this.promptsLabel.Text = "Prompts:";
 			// 
 			// addPromptButton
 			// 
-			this.addPromptButton.Location = new System.Drawing.Point(142, 263);
+			this.addPromptButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+			this.addPromptButton.FlatAppearance.BorderSize = 0;
+			this.addPromptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.addPromptButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 10.25F, System.Drawing.FontStyle.Bold);
+			this.addPromptButton.ForeColor = System.Drawing.Color.White;
+			this.addPromptButton.Location = new System.Drawing.Point(428, 151);
 			this.addPromptButton.Name = "addPromptButton";
 			this.addPromptButton.Size = new System.Drawing.Size(75, 23);
 			this.addPromptButton.TabIndex = 2;
 			this.addPromptButton.TabStop = false;
 			this.addPromptButton.Text = "Add Prompt";
-			this.addPromptButton.UseVisualStyleBackColor = true;
+			this.addPromptButton.UseVisualStyleBackColor = false;
 			this.addPromptButton.Click += new System.EventHandler(this.addPromptButton_Click);
 			// 
 			// editPromptTextBox
 			// 
 			this.editPromptTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.editPromptTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.editPromptTextBox.Location = new System.Drawing.Point(142, 331);
+			this.editPromptTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+			this.editPromptTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.editPromptTextBox.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.14F, System.Drawing.FontStyle.Bold);
+			this.editPromptTextBox.ForeColor = System.Drawing.Color.White;
+			this.editPromptTextBox.Location = new System.Drawing.Point(38, 345);
 			this.editPromptTextBox.Name = "editPromptTextBox";
-			this.editPromptTextBox.Size = new System.Drawing.Size(361, 20);
+			this.editPromptTextBox.Size = new System.Drawing.Size(361, 23);
 			this.editPromptTextBox.TabIndex = 3;
 			// 
 			// editPromptLabel
 			// 
 			this.editPromptLabel.AutoSize = true;
-			this.editPromptLabel.Location = new System.Drawing.Point(144, 315);
+			this.editPromptLabel.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.editPromptLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+			this.editPromptLabel.Location = new System.Drawing.Point(43, 319);
 			this.editPromptLabel.Name = "editPromptLabel";
-			this.editPromptLabel.Size = new System.Drawing.Size(61, 13);
+			this.editPromptLabel.Size = new System.Drawing.Size(128, 23);
 			this.editPromptLabel.TabIndex = 4;
 			this.editPromptLabel.Text = "Edit Prompt";
 			// 
@@ -93,31 +110,45 @@
 			// 
 			this.editPromptAnswerTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.editPromptAnswerTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.editPromptAnswerTextBox.Location = new System.Drawing.Point(142, 357);
+			this.editPromptAnswerTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+			this.editPromptAnswerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.editPromptAnswerTextBox.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 14.14F, System.Drawing.FontStyle.Bold);
+			this.editPromptAnswerTextBox.ForeColor = System.Drawing.Color.White;
+			this.editPromptAnswerTextBox.Location = new System.Drawing.Point(38, 371);
 			this.editPromptAnswerTextBox.Name = "editPromptAnswerTextBox";
-			this.editPromptAnswerTextBox.Size = new System.Drawing.Size(361, 20);
+			this.editPromptAnswerTextBox.Size = new System.Drawing.Size(361, 23);
 			this.editPromptAnswerTextBox.TabIndex = 5;
 			// 
 			// loadButton
 			// 
-			this.loadButton.Location = new System.Drawing.Point(427, 263);
+			this.loadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
+			this.loadButton.FlatAppearance.BorderSize = 0;
+			this.loadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.loadButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 10.25F, System.Drawing.FontStyle.Bold);
+			this.loadButton.ForeColor = System.Drawing.Color.White;
+			this.loadButton.Location = new System.Drawing.Point(509, 360);
 			this.loadButton.Name = "loadButton";
 			this.loadButton.Size = new System.Drawing.Size(75, 23);
 			this.loadButton.TabIndex = 7;
 			this.loadButton.TabStop = false;
 			this.loadButton.Text = "Load";
-			this.loadButton.UseVisualStyleBackColor = true;
+			this.loadButton.UseVisualStyleBackColor = false;
 			this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
 			// 
 			// saveButton
 			// 
-			this.saveButton.Location = new System.Drawing.Point(346, 263);
+			this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(204)))), ((int)(((byte)(137)))));
+			this.saveButton.FlatAppearance.BorderSize = 0;
+			this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.saveButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 10.25F, System.Drawing.FontStyle.Bold);
+			this.saveButton.ForeColor = System.Drawing.Color.White;
+			this.saveButton.Location = new System.Drawing.Point(428, 360);
 			this.saveButton.Name = "saveButton";
 			this.saveButton.Size = new System.Drawing.Size(75, 23);
 			this.saveButton.TabIndex = 6;
 			this.saveButton.TabStop = false;
 			this.saveButton.Text = "Save";
-			this.saveButton.UseVisualStyleBackColor = true;
+			this.saveButton.UseVisualStyleBackColor = false;
 			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
 			// 
 			// loadFileDialog
@@ -131,24 +162,34 @@
 			// 
 			// removePrompt
 			// 
-			this.removePrompt.Location = new System.Drawing.Point(223, 263);
+			this.removePrompt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+			this.removePrompt.FlatAppearance.BorderSize = 0;
+			this.removePrompt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.removePrompt.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 10.25F, System.Drawing.FontStyle.Bold);
+			this.removePrompt.ForeColor = System.Drawing.Color.White;
+			this.removePrompt.Location = new System.Drawing.Point(509, 151);
 			this.removePrompt.Name = "removePrompt";
-			this.removePrompt.Size = new System.Drawing.Size(96, 23);
+			this.removePrompt.Size = new System.Drawing.Size(75, 23);
 			this.removePrompt.TabIndex = 8;
 			this.removePrompt.TabStop = false;
 			this.removePrompt.Text = "Remove Prompt";
-			this.removePrompt.UseVisualStyleBackColor = true;
+			this.removePrompt.UseVisualStyleBackColor = false;
 			this.removePrompt.Click += new System.EventHandler(this.removePrompt_Click);
 			// 
 			// clearPrompts
 			// 
-			this.clearPrompts.Location = new System.Drawing.Point(223, 292);
+			this.clearPrompts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+			this.clearPrompts.FlatAppearance.BorderSize = 0;
+			this.clearPrompts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.clearPrompts.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 10.25F, System.Drawing.FontStyle.Bold);
+			this.clearPrompts.ForeColor = System.Drawing.Color.White;
+			this.clearPrompts.Location = new System.Drawing.Point(428, 180);
 			this.clearPrompts.Name = "clearPrompts";
-			this.clearPrompts.Size = new System.Drawing.Size(96, 23);
+			this.clearPrompts.Size = new System.Drawing.Size(156, 23);
 			this.clearPrompts.TabIndex = 9;
 			this.clearPrompts.TabStop = false;
 			this.clearPrompts.Text = "Clear Prompts";
-			this.clearPrompts.UseVisualStyleBackColor = true;
+			this.clearPrompts.UseVisualStyleBackColor = false;
 			this.clearPrompts.Click += new System.EventHandler(this.clearPrompts_Click);
 			// 
 			// UC_Edit
