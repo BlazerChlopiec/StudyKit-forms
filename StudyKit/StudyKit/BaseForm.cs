@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace StudyKit
@@ -12,6 +13,12 @@ namespace StudyKit
 		Prompt previousPrompt;
 
 		bool lastEnterIncorrect;
+
+		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+		private extern static void ReleaseCapture();
+		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
 
 		public BaseForm()
 		{
@@ -33,6 +40,8 @@ namespace StudyKit
 		}
 
 		private void editButton_click(object sender, System.EventArgs e) => editForm.Show();
+
+		private void quitButton_Click(object sender, EventArgs e) => Application.Exit();
 
 		private void checkButton_Click(object sender, EventArgs e) => ProcessAnswer();
 
@@ -56,7 +65,7 @@ namespace StudyKit
 			{
 				Console.WriteLine("Incorrect");
 				lastEnterIncorrect = true;
-				promptLabel.ForeColor = Color.Red;
+				promptLabel.ForeColor = Color.FromArgb(204, 82, 82);
 
 				correctLabel.Text = correctAnswer;
 				correctLabel.Visible = true;
@@ -72,7 +81,7 @@ namespace StudyKit
 				return;
 			}
 
-			promptLabel.ForeColor = Color.Black;
+			promptLabel.ForeColor = Color.White;
 
 			textBox.Enabled = true;
 			textBox.Text = string.Empty;
@@ -107,6 +116,12 @@ namespace StudyKit
 			var value = random.Next(0, validPrompts.Count);
 
 			return validPrompts[value];
+		}
+
+		private void optionPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			ReleaseCapture();
+			SendMessage(Handle, 0x112, 0xf012, 0);
 		}
 	}
 }
