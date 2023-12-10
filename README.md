@@ -1,7 +1,7 @@
 # StudyKit-forms
 Studying Tool Made For Memorizing Words
 <br>
-Made in c# forms
+Made in C# Winforms
 <br>
 [![MIT License](https://img.shields.io/badge/License-MIT-purple.svg)](https://choosealicense.com/licenses/mit/)
 
@@ -11,11 +11,10 @@ Made in c# forms
 * Checking for errors
 * Whitespace proof environment
 
-## Images
 <img src="Images/Study.png">
-<img src="Images/Edit.png">
 
-The Prompt Files Are Saved As JSON
+## Editing Prompts
+The Prompt Files Are Saved As JSON & Can Be Directly Edited
 ```json
 [
    {
@@ -25,3 +24,6 @@ The Prompt Files Are Saved As JSON
    },
 ]
 ```
+They Can Also Be Edited via The GUI
+<br>
+<img src="Images/Edit.png">
