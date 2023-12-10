@@ -68,14 +68,10 @@ namespace StudyKit.UserControls
 				}
 			}
 
-			if (input.ToLower() == correctAnswer.ToLower())
-			{
-				Console.WriteLine("Correct");
-				RefreshPrompt();
-			}
+			if (input.ToLower().TrimEnd() == correctAnswer.ToLower().TrimEnd()) RefreshPrompt();
+
 			else
 			{
-				Console.WriteLine("Incorrect");
 				lastEnterIncorrect = true;
 				promptLabel.ForeColor = Color.FromArgb(204, 82, 82);
 
@@ -86,12 +82,7 @@ namespace StudyKit.UserControls
 
 		public void RefreshPrompt()
 		{
-			if (uc_edit.promptItemList.Items.Count == 0)
-			{
-				//MessageBox.Show("There are no available prompts!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				Console.WriteLine("There are no available prompts!");
-				return;
-			}
+			if (uc_edit.promptItemList.Items.Count == 0) return;
 
 			promptLabel.ForeColor = Color.White;
 
@@ -108,8 +99,6 @@ namespace StudyKit.UserControls
 
 			correctLabel.Visible = false;
 			lastEnterIncorrect = false;
-
-			Console.WriteLine("Refreshed");
 		}
 
 		private Prompt GetRandomPrompt()
