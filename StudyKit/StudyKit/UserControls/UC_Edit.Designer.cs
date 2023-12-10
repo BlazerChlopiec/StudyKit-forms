@@ -155,6 +155,7 @@
 			// 
 			this.loadFileDialog.DefaultExt = "json";
 			this.loadFileDialog.FileName = "loadFileDialog";
+			this.loadFileDialog.Filter = "Json files (*.json)|*.json";
 			// 
 			// saveFileDialog
 			// 
