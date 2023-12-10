@@ -9,6 +9,7 @@ Made in c# forms
 * Prompt System
 * Save/Load via Json
 * Checking for errors
+* Whitespace proof environment
 
 ## Images
 <img src="Images/Study.png">
@@ -18,7 +19,7 @@ The Prompt Files Are Saved As JSON
 ```json
 [
    {
-      "promptText":"praca ",
+      "promptText":"praca",
       "correctAnswer":"die arbeit",
       "checkState":1
    },
