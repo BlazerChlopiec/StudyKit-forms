@@ -34,6 +34,13 @@ namespace StudyKit.UserControls
 
 		public void ProcessAnswer()
 		{
+			if (currentPrompt == null)
+			{
+				MessageBox.Show("Add prompts first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				textBox.Clear();
+				return;
+			}
+
 			if (lastEnterIncorrect)
 			{
 				RefreshPrompt();
@@ -42,6 +49,24 @@ namespace StudyKit.UserControls
 
 			var input = textBox.Text;
 			var correctAnswer = currentPrompt.correctAnswer;
+
+			if (input != string.Empty)
+			{
+				var startRed = -1;
+				for (int i = 0; i < textBox.TextLength; i++)
+					if ((correctAnswer.Length <= i || input[i] != correctAnswer[i]) && startRed == -1) startRed = i;
+
+				if (startRed != -1)
+				{
+					textBox.Select(startRed, textBox.TextLength);
+					textBox.SelectionColor = Color.Red;
+					textBox.SelectionLength = 0;
+
+					// set cursor at last pos in text
+					textBox.Select(textBox.TextLength, 0);
+					textBox.SelectionLength = 0;
+				}
+			}
 
 			if (input.ToLower() == correctAnswer.ToLower())
 			{

@@ -120,6 +120,8 @@ namespace StudyKit.UserControls
 			promptItemList.SelectedIndex = promptItemList.Items.Count - 1;
 		}
 
+		private void clearPrompts_Click(object sender, EventArgs e) => ClearAllPrompts();
+
 		private void UC_Edit_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
@@ -137,8 +139,6 @@ namespace StudyKit.UserControls
 				itemPrompt.checkState = promptItemList.GetItemCheckState(index);
 			}
 		}
-
-		private void clearPrompts_Click(object sender, EventArgs e) => ClearAllPrompts();
 
 		private void ClearAllPrompts()
 		{

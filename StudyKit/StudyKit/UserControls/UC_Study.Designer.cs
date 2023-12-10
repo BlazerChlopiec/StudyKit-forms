@@ -30,8 +30,8 @@
 		{
 			this.correctLabel = new System.Windows.Forms.Label();
 			this.promptLabel = new System.Windows.Forms.Label();
-			this.textBox = new System.Windows.Forms.TextBox();
 			this.checkButton = new System.Windows.Forms.Button();
+			this.textBox = new System.Windows.Forms.RichTextBox();
 			this.SuspendLayout();
 			// 
 			// correctLabel
@@ -58,27 +58,12 @@
 			this.promptLabel.Text = "---";
 			this.promptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// textBox
-			// 
-			this.textBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.textBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
-			this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox.Enabled = false;
-			this.textBox.Font = new System.Drawing.Font("Yu Gothic", 24.29F, System.Drawing.FontStyle.Bold);
-			this.textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
-			this.textBox.Location = new System.Drawing.Point(104, 224);
-			this.textBox.Name = "textBox";
-			this.textBox.Size = new System.Drawing.Size(371, 52);
-			this.textBox.TabIndex = 5;
-			// 
 			// checkButton
 			// 
 			this.checkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(204)))), ((int)(((byte)(137)))));
 			this.checkButton.BackgroundImage = global::StudyKit.Properties.Resources.arrow;
 			this.checkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.checkButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.checkButton.Enabled = false;
 			this.checkButton.FlatAppearance.BorderSize = 0;
 			this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.checkButton.Font = new System.Drawing.Font("Uni Sans Heavy CAPS", 21.27F, System.Drawing.FontStyle.Bold);
@@ -90,18 +75,30 @@
 			this.checkButton.UseVisualStyleBackColor = false;
 			this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
 			// 
+			// textBox
+			// 
+			this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+			this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.textBox.Font = new System.Drawing.Font("Yu Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
+			this.textBox.Location = new System.Drawing.Point(104, 222);
+			this.textBox.Multiline = false;
+			this.textBox.Name = "textBox";
+			this.textBox.Size = new System.Drawing.Size(371, 42);
+			this.textBox.TabIndex = 7;
+			this.textBox.Text = "";
+			// 
 			// UC_Study
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.correctLabel);
 			this.Controls.Add(this.promptLabel);
-			this.Controls.Add(this.textBox);
 			this.Controls.Add(this.checkButton);
+			this.Controls.Add(this.textBox);
 			this.Name = "UC_Study";
 			this.Size = new System.Drawing.Size(634, 411);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -109,7 +106,7 @@
 
 		public System.Windows.Forms.Label correctLabel;
 		public System.Windows.Forms.Label promptLabel;
-		public System.Windows.Forms.TextBox textBox;
 		public System.Windows.Forms.Button checkButton;
+		private System.Windows.Forms.RichTextBox textBox;
 	}
 }
