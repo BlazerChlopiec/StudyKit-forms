@@ -61,7 +61,7 @@ namespace StudyKit.UserControls
 				if (startRed != -1)
 				{
 					textBox.Select(startRed, textBox.TextLength);
-					textBox.SelectionColor = Color.Red;
+					textBox.SelectionColor = BaseForm.flatRed;
 					textBox.SelectionLength = 0;
 
 					// set cursor at last pos in text
