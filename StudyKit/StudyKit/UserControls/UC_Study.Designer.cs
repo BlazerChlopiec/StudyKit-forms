@@ -32,12 +32,13 @@
 			this.promptLabel = new System.Windows.Forms.Label();
 			this.checkButton = new System.Windows.Forms.Button();
 			this.textBox = new System.Windows.Forms.RichTextBox();
+			this.streakLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// correctLabel
 			// 
 			this.correctLabel.Font = new System.Drawing.Font("Yu Gothic", 21.27F, System.Drawing.FontStyle.Bold);
-			this.correctLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+			this.correctLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
 			this.correctLabel.Location = new System.Drawing.Point(158, 282);
 			this.correctLabel.Name = "correctLabel";
 			this.correctLabel.Size = new System.Drawing.Size(313, 63);
@@ -88,10 +89,23 @@
 			this.textBox.TabIndex = 7;
 			this.textBox.Text = "";
 			// 
+			// streakLabel
+			// 
+			this.streakLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
+			this.streakLabel.Font = new System.Drawing.Font("Yu Gothic", 21.27F, System.Drawing.FontStyle.Bold);
+			this.streakLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(76)))));
+			this.streakLabel.Location = new System.Drawing.Point(3, 364);
+			this.streakLabel.Name = "streakLabel";
+			this.streakLabel.Size = new System.Drawing.Size(206, 44);
+			this.streakLabel.TabIndex = 8;
+			this.streakLabel.Text = "Streak: 0";
+			this.streakLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// UC_Study
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.streakLabel);
 			this.Controls.Add(this.correctLabel);
 			this.Controls.Add(this.promptLabel);
 			this.Controls.Add(this.checkButton);
@@ -108,5 +122,6 @@
 		public System.Windows.Forms.Label promptLabel;
 		public System.Windows.Forms.Button checkButton;
 		private System.Windows.Forms.RichTextBox textBox;
+		public System.Windows.Forms.Label streakLabel;
 	}
 }

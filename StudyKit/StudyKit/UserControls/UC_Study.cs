@@ -12,6 +12,8 @@ namespace StudyKit.UserControls
 
 		bool lastEnterIncorrect;
 
+		int streak;
+
 		public UC_Edit uc_edit;
 
 		public UC_Study()
@@ -68,10 +70,18 @@ namespace StudyKit.UserControls
 				}
 			}
 
-			if (input.ToLower().TrimEnd() == correctAnswer.ToLower().TrimEnd()) RefreshPrompt();
+			if (input.ToLower().TrimEnd() == correctAnswer.ToLower().TrimEnd())
+			{
+				RefreshPrompt();
 
+				streak++;
+				StreakUpdate();
+			}
 			else
 			{
+				streak = 0;
+				StreakUpdate();
+
 				lastEnterIncorrect = true;
 				promptLabel.ForeColor = Color.FromArgb(204, 82, 82);
 
@@ -79,6 +89,8 @@ namespace StudyKit.UserControls
 				correctLabel.Visible = true;
 			}
 		}
+
+		private void StreakUpdate() => streakLabel.Text = $"Streak: {streak}";
 
 		public void RefreshPrompt()
 		{
