@@ -109,7 +109,7 @@ namespace StudyKit.UserControls
 			foreach (var item in uc_edit.promptItemList.Items)
 			{
 				var prompt = (Prompt)item;
-				if (prompt.checkState == CheckState.Unchecked || prompt == previousPrompt) continue;
+				if (prompt.checkState == CheckState.Unchecked || (prompt == previousPrompt && uc_edit.promptItemList.Items.Count != 1)) continue;
 				else validPrompts.Add(prompt);
 			}
 
