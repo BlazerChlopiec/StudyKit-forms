@@ -48,6 +48,7 @@
 			this.editButton.Name = "editButton";
 			this.editButton.Size = new System.Drawing.Size(116, 49);
 			this.editButton.TabIndex = 0;
+			this.editButton.TabStop = false;
 			this.editButton.Text = "Edit";
 			this.editButton.UseVisualStyleBackColor = false;
 			this.editButton.Click += new System.EventHandler(this.editButton_click);
@@ -77,6 +78,7 @@
 			this.quitButton.Name = "quitButton";
 			this.quitButton.Size = new System.Drawing.Size(116, 49);
 			this.quitButton.TabIndex = 2;
+			this.quitButton.TabStop = false;
 			this.quitButton.Text = "Quit";
 			this.quitButton.UseVisualStyleBackColor = false;
 			this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
@@ -93,6 +95,7 @@
 			this.studyButton.Name = "studyButton";
 			this.studyButton.Size = new System.Drawing.Size(116, 49);
 			this.studyButton.TabIndex = 1;
+			this.studyButton.TabStop = false;
 			this.studyButton.Text = "Study";
 			this.studyButton.UseVisualStyleBackColor = false;
 			this.studyButton.Click += new System.EventHandler(this.studyButton_Click);
