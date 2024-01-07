@@ -52,9 +52,9 @@
 			this.promptLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
 			this.promptLabel.Font = new System.Drawing.Font("Yu Gothic", 21.27F, System.Drawing.FontStyle.Bold);
 			this.promptLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.promptLabel.Location = new System.Drawing.Point(158, 158);
+			this.promptLabel.Location = new System.Drawing.Point(3, 158);
 			this.promptLabel.Name = "promptLabel";
-			this.promptLabel.Size = new System.Drawing.Size(313, 63);
+			this.promptLabel.Size = new System.Drawing.Size(628, 63);
 			this.promptLabel.TabIndex = 4;
 			this.promptLabel.Text = "---";
 			this.promptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
