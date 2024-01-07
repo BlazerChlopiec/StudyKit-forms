@@ -146,5 +146,18 @@ namespace StudyKit.UserControls
 			editPromptAnswerTextBox.Clear();
 			editPromptTextBox.Clear();
 		}
+
+		private void swapCollection_Click(object sender, EventArgs e)
+		{
+			foreach (Prompt prompt in promptItemList.Items)
+			{
+				var pt = prompt.promptText;
+				var ca = prompt.correctAnswer;
+				prompt.correctAnswer = pt;
+				prompt.promptText = ca;
+			}
+
+			promptItemList.Focus();
+		}
 	}
 }

@@ -40,6 +40,7 @@
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.removePrompt = new System.Windows.Forms.Button();
 			this.clearPrompts = new System.Windows.Forms.Button();
+			this.swapCollection = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// promptItemList
@@ -193,10 +194,27 @@
 			this.clearPrompts.UseVisualStyleBackColor = false;
 			this.clearPrompts.Click += new System.EventHandler(this.clearPrompts_Click);
 			// 
+			// swapCollection
+			// 
+			this.swapCollection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+			this.swapCollection.FlatAppearance.BorderSize = 0;
+			this.swapCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.swapCollection.Font = new System.Drawing.Font("Yu Gothic", 10.25F, System.Drawing.FontStyle.Bold);
+			this.swapCollection.ForeColor = System.Drawing.Color.White;
+			this.swapCollection.Location = new System.Drawing.Point(428, 229);
+			this.swapCollection.Name = "swapCollection";
+			this.swapCollection.Size = new System.Drawing.Size(156, 27);
+			this.swapCollection.TabIndex = 10;
+			this.swapCollection.TabStop = false;
+			this.swapCollection.Text = "Swap Collection";
+			this.swapCollection.UseVisualStyleBackColor = false;
+			this.swapCollection.Click += new System.EventHandler(this.swapCollection_Click);
+			// 
 			// UC_Edit
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.swapCollection);
 			this.Controls.Add(this.clearPrompts);
 			this.Controls.Add(this.removePrompt);
 			this.Controls.Add(this.loadButton);
@@ -229,5 +247,6 @@
 		public System.Windows.Forms.CheckedListBox promptItemList;
 		private System.Windows.Forms.OpenFileDialog loadFileDialog;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
+		public System.Windows.Forms.Button swapCollection;
 	}
 }

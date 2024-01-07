@@ -121,14 +121,15 @@ namespace StudyKit.UserControls
 			foreach (var item in uc_edit.promptItemList.Items)
 			{
 				var prompt = (Prompt)item;
-				if (prompt.checkState == CheckState.Unchecked || (prompt == previousPrompt && uc_edit.promptItemList.Items.Count != 1)) continue;
+				if (prompt.checkState == CheckState.Unchecked ||
+				   (previousPrompt != null && prompt.promptText == previousPrompt.promptText && uc_edit.promptItemList.Items.Count != 1)) continue;
 				else validPrompts.Add(prompt);
 			}
 
 			Random random = new Random();
 			var value = random.Next(0, validPrompts.Count);
 
-			return validPrompts[value];
+			return validPrompts.Count == 0 ? previousPrompt : validPrompts[value];
 		}
 
 		private void checkButton_Click(object sender, EventArgs e) => ProcessAnswer();
