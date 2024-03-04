@@ -9,6 +9,7 @@ Made in C# Winforms
 * Prompt System
 * Save/Load via Json
 * Checking for errors
+* Drag & Drop
 * Whitespace proof environment
 
 <img src="Images/Study.png">
