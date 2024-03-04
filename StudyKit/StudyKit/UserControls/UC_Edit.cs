@@ -17,8 +17,6 @@ namespace StudyKit.UserControls
 		{
 			InitializeComponent();
 
-			AllowDrop = true;
-
 			promptItemList.DisplayMember = "displayListName";
 
 			promptItemList.ItemCheck += (b, a) =>
@@ -107,7 +105,8 @@ namespace StudyKit.UserControls
 			}
 		}
 
-		private void LoadFromJSON(string jsonPath)
+		// returns whether the JSON was valid
+		public bool LoadFromJSON(string jsonPath)
 		{
 			using (StreamReader r = new StreamReader(jsonPath))
 			{
@@ -125,11 +124,14 @@ namespace StudyKit.UserControls
 						AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
 					}
 
+					return true; // JSON valid
 				}
-				catch (Exception) // if JSON is invalid
+				catch (Exception)
 				{
 					errorLabel.Visible = true;
 					Console.WriteLine("JSON Incorrect!");
+
+					return false; // JSON invalid
 				}
 			}
 		}
@@ -178,37 +180,6 @@ namespace StudyKit.UserControls
 			if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
 			{
 				AddPrompt();
-			}
-		}
-
-		private void UC_Edit_DragDrop(object sender, DragEventArgs e)
-		{
-			try
-			{
-				if (e.Data.GetDataPresent(DataFormats.FileDrop))
-				{
-					// this gets all our dragged files
-					var files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-					LoadFromJSON(files[0]); // we only use one dragged json file
-				}
-			}
-			catch (Exception)
-			{
-				Console.WriteLine("Couldn't fetch dropData");
-			}
-		}
-
-		private void UC_Edit_DragEnter(object sender, DragEventArgs e)
-		{
-			// Check if the Data being dragged is of a format you can accept
-			if (e.Data.GetDataPresent(DataFormats.FileDrop))
-			{
-				e.Effect = DragDropEffects.All; // Or another appropriate effect
-			}
-			else
-			{
-				e.Effect = DragDropEffects.None;
 			}
 		}
 	}

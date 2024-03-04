@@ -26,6 +26,7 @@ namespace StudyKit
 		{
 			InitializeComponent();
 
+
 			uc_study = new UC_Study();
 			AddUserControl(uc_study);
 
@@ -56,7 +57,7 @@ namespace StudyKit
 			uc_edit.errorLabel.Visible = false; // make the JSON error label disapper if switched tabs
 
 			AddUserControl(uc_study);
-			if (uc_study.currentPrompt == null) uc_study.RefreshPrompt();
+			uc_study.RefreshPrompt();
 			DarkenButtonAndLock(sender);
 		}
 
@@ -82,6 +83,38 @@ namespace StudyKit
 			currentButton.BackColor = Color.FromArgb((int)(currentButton.BackColor.R * (1f - proc)),
 													(int)(currentButton.BackColor.G * (1f - proc)),
 													(int)(currentButton.BackColor.B * (1f - proc)));
+		}
+
+		private void basePanel_DragDrop(object sender, DragEventArgs e)
+		{
+			try
+			{
+				if (e.Data.GetDataPresent(DataFormats.FileDrop))
+				{
+					// this gets all our dragged files
+					var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+					if (uc_edit.LoadFromJSON(files[0])) // we only use one dragged json file
+						uc_study.RefreshPrompt(); // fetch new prompt for studying
+				}
+			}
+			catch (Exception)
+			{
+				Console.WriteLine("Couldn't fetch dropData");
+			}
+		}
+
+		private void basePanel_DragEnter(object sender, DragEventArgs e)
+		{
+			// Check if the Data being dragged is of a format you can accept
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+			{
+				e.Effect = DragDropEffects.All; // Or another appropriate effect
+			}
+			else
+			{
+				e.Effect = DragDropEffects.None;
+			}
 		}
 	}
 }

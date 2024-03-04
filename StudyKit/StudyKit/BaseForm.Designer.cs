@@ -103,12 +103,15 @@
 			// 
 			// basePanel
 			// 
+			this.basePanel.AllowDrop = true;
 			this.basePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
 			this.basePanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.basePanel.Location = new System.Drawing.Point(0, 0);
 			this.basePanel.Name = "basePanel";
 			this.basePanel.Size = new System.Drawing.Size(634, 411);
 			this.basePanel.TabIndex = 4;
+			this.basePanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.basePanel_DragDrop);
+			this.basePanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.basePanel_DragEnter);
 			// 
 			// BaseForm
 			// 
