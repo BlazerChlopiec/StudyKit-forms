@@ -104,11 +104,24 @@ namespace StudyKit.UserControls
 				using (StreamReader r = new StreamReader(loadFileDialog.FileName))
 				{
 					string json = r.ReadToEnd();
-					var prompts = JsonConvert.DeserializeObject<List<Prompt>>(json);
 
-					foreach (var prompt in prompts)
+					try
 					{
-						AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
+						var prompts = JsonConvert.DeserializeObject<List<Prompt>>(json);
+
+						// if could load JSON correctly remove the errorLabel if shown
+						errorLabel.Visible = false;
+
+						foreach (var prompt in prompts)
+						{
+							AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
+						}
+
+					}
+					catch (Exception) // if JSON is invalid
+					{
+						errorLabel.Visible = true;
+						Console.WriteLine("JSON Incorrect!");
 					}
 				}
 			}
