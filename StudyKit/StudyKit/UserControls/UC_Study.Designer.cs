@@ -39,9 +39,9 @@
 			// 
 			this.correctLabel.Font = new System.Drawing.Font("Yu Gothic", 21.27F, System.Drawing.FontStyle.Bold);
 			this.correctLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
-			this.correctLabel.Location = new System.Drawing.Point(158, 282);
+			this.correctLabel.Location = new System.Drawing.Point(3, 282);
 			this.correctLabel.Name = "correctLabel";
-			this.correctLabel.Size = new System.Drawing.Size(313, 63);
+			this.correctLabel.Size = new System.Drawing.Size(628, 63);
 			this.correctLabel.TabIndex = 3;
 			this.correctLabel.Text = "---";
 			this.correctLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
