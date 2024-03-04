@@ -99,10 +99,7 @@ namespace StudyKit.UserControls
 			var result = loadFileDialog.ShowDialog();
 
 			if (result == DialogResult.OK)
-			{
-				ClearAllPrompts();
 				LoadFromJSON(loadFileDialog.FileName);
-			}
 		}
 
 		// returns whether the JSON was valid
@@ -116,8 +113,7 @@ namespace StudyKit.UserControls
 				{
 					var prompts = JsonConvert.DeserializeObject<List<Prompt>>(json);
 
-					// if could load JSON correctly remove the errorLabel if shown
-					errorLabel.Visible = false;
+					ClearAllPrompts(); // clear all prompts before loading new ones
 
 					foreach (var prompt in prompts)
 					{
@@ -128,8 +124,7 @@ namespace StudyKit.UserControls
 				}
 				catch (Exception)
 				{
-					errorLabel.Visible = true;
-					Console.WriteLine("JSON Incorrect!");
+					MessageBox.Show("JSON Incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 					return false; // JSON invalid
 				}

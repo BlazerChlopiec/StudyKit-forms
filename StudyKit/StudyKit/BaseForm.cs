@@ -54,8 +54,6 @@ namespace StudyKit
 
 		private void studyButton_Click(object sender, EventArgs e)
 		{
-			uc_edit.errorLabel.Visible = false; // make the JSON error label disapper if switched tabs
-
 			AddUserControl(uc_study);
 			uc_study.RefreshPrompt();
 			DarkenButtonAndLock(sender);
@@ -87,20 +85,15 @@ namespace StudyKit
 
 		private void basePanel_DragDrop(object sender, DragEventArgs e)
 		{
-			try
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
 			{
-				if (e.Data.GetDataPresent(DataFormats.FileDrop))
-				{
-					// this gets all our dragged files
-					var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+				// this gets all our dragged files
+				var files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-					if (uc_edit.LoadFromJSON(files[0])) // we only use one dragged json file
-						uc_study.RefreshPrompt(); // fetch new prompt for studying
-				}
-			}
-			catch (Exception)
-			{
-				Console.WriteLine("Couldn't fetch dropData");
+				var json = files[0]; // we can only use one file from drag & drop
+
+				if (uc_edit.LoadFromJSON(json)) // if JSON loaded successfully
+					uc_study.RefreshPrompt(); // fetch new prompt for studying
 			}
 		}
 

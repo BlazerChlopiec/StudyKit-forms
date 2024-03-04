@@ -41,7 +41,6 @@
 			this.removePrompt = new System.Windows.Forms.Button();
 			this.clearPrompts = new System.Windows.Forms.Button();
 			this.swapCollection = new System.Windows.Forms.Button();
-			this.errorLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// promptItemList
@@ -211,24 +210,10 @@
 			this.swapCollection.UseVisualStyleBackColor = false;
 			this.swapCollection.Click += new System.EventHandler(this.swapCollection_Click);
 			// 
-			// errorLabel
-			// 
-			this.errorLabel.AutoSize = true;
-			this.errorLabel.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-			this.errorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.errorLabel.Location = new System.Drawing.Point(453, 339);
-			this.errorLabel.Name = "errorLabel";
-			this.errorLabel.Size = new System.Drawing.Size(110, 18);
-			this.errorLabel.TabIndex = 11;
-			this.errorLabel.Text = "Incorrect JSON";
-			this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.errorLabel.Visible = false;
-			// 
 			// UC_Edit
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.errorLabel);
 			this.Controls.Add(this.swapCollection);
 			this.Controls.Add(this.clearPrompts);
 			this.Controls.Add(this.removePrompt);
@@ -263,6 +248,5 @@
 		private System.Windows.Forms.OpenFileDialog loadFileDialog;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 		public System.Windows.Forms.Button swapCollection;
-		public System.Windows.Forms.Label errorLabel;
 	}
 }
