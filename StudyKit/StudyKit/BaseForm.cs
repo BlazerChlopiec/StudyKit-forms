@@ -53,6 +53,8 @@ namespace StudyKit
 
 		private void studyButton_Click(object sender, EventArgs e)
 		{
+			uc_edit.errorLabel.Visible = false; // make the JSON error label disapper if switched tabs
+
 			AddUserControl(uc_study);
 			if (uc_study.currentPrompt == null) uc_study.RefreshPrompt();
 			DarkenButtonAndLock(sender);

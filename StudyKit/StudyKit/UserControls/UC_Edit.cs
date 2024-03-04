@@ -12,6 +12,7 @@ namespace StudyKit.UserControls
 
 		Prompt currentlyEditedPrompt;
 
+
 		public UC_Edit()
 		{
 			InitializeComponent();
@@ -56,8 +57,6 @@ namespace StudyKit.UserControls
 				}
 			};
 		}
-
-
 
 		private void addPromptButton_Click(object sender, EventArgs e) => AddPrompt();
 
@@ -143,15 +142,6 @@ namespace StudyKit.UserControls
 
 		private void clearPrompts_Click(object sender, EventArgs e) => ClearAllPrompts();
 
-		private void UC_Edit_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
-			{
-				AddPrompt();
-			}
-		}
-
-
 		public void UpdateCheckState()
 		{
 			foreach (var item in promptItemList.Items)
@@ -180,6 +170,15 @@ namespace StudyKit.UserControls
 			}
 
 			promptItemList.Focus();
+		}
+
+		private void UC_Edit_KeyDown(object sender, KeyEventArgs e)
+		{
+			// Add Prompt Shortcut CTRL + N
+			if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
+			{
+				AddPrompt();
+			}
 		}
 
 		private void UC_Edit_DragDrop(object sender, DragEventArgs e)
