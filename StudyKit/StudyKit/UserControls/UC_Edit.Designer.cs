@@ -242,6 +242,8 @@
 			this.Controls.Add(this.promptItemList);
 			this.Name = "UC_Edit";
 			this.Size = new System.Drawing.Size(634, 411);
+			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.UC_Edit_DragDrop);
+			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.UC_Edit_DragEnter);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UC_Edit_KeyDown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
