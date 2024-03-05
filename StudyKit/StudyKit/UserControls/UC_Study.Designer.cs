@@ -88,6 +88,7 @@
 			this.textBox.Size = new System.Drawing.Size(371, 42);
 			this.textBox.TabIndex = 7;
 			this.textBox.Text = "";
+			this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
 			// 
 			// streakLabel
 			// 

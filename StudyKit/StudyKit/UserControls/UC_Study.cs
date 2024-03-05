@@ -52,23 +52,7 @@ namespace StudyKit.UserControls
 			var input = textBox.Text;
 			var correctAnswer = currentPrompt.correctAnswer;
 
-			if (input != string.Empty)
-			{
-				var startRed = -1;
-				for (int i = 0; i < textBox.TextLength; i++)
-					if ((correctAnswer.Length <= i || input[i] != correctAnswer[i]) && startRed == -1) startRed = i;
-
-				if (startRed != -1)
-				{
-					textBox.Select(startRed, textBox.TextLength);
-					textBox.SelectionColor = BaseForm.flatRed;
-					textBox.SelectionLength = 0;
-
-					// set cursor at last pos in text
-					textBox.Select(textBox.TextLength, 0);
-					textBox.SelectionLength = 0;
-				}
-			}
+			SpellCheck(input);
 
 			if (input.ToLower().TrimEnd() == correctAnswer.ToLower().TrimEnd())
 			{
@@ -87,6 +71,43 @@ namespace StudyKit.UserControls
 
 				correctLabel.Text = correctAnswer;
 				correctLabel.Visible = true;
+			}
+		}
+
+		private void SpellCheck(string input)
+		{
+			if (input == string.Empty || currentPrompt == null) return;
+
+			var correctAnswer = currentPrompt.correctAnswer;
+
+			var cursorPosition = textBox.SelectionStart;
+
+			var redIndex = -1; // starting Index from which red should be painted
+
+			for (int i = 0; i < textBox.TextLength; i++) // loop through text
+			{
+				// if length is shorter than i OR is correctAnswer[i] is different
+				if ((correctAnswer.Length <= i || input.ToLower()[i] != correctAnswer.ToLower()[i])
+					&& redIndex == -1) redIndex = i; // and if start red Index hasn't been assigned yet - set it to i
+			}
+
+			if (redIndex > -1) // if there is a red index to start painting
+			{
+				textBox.Select(redIndex, textBox.TextLength);
+				textBox.SelectionColor = BaseForm.flatRed;
+
+				// set cursor at previous pos in text before spell check
+				textBox.Select(cursorPosition, textBox.TextLength);
+				textBox.SelectionLength = 0; // deselect
+			}
+			else // unpaint previous highlighted red
+			{
+				textBox.Select(0, textBox.TextLength);
+				textBox.SelectionColor = BaseForm.flatLightBlue;
+
+				// set cursor at previous pos in text before spell check
+				textBox.Select(cursorPosition, textBox.TextLength);
+				textBox.SelectionLength = 0; // deselect
 			}
 		}
 
@@ -133,5 +154,7 @@ namespace StudyKit.UserControls
 		}
 
 		private void checkButton_Click(object sender, EventArgs e) => ProcessAnswer();
+
+		private void textBox_TextChanged(object sender, EventArgs e) => SpellCheck(input: textBox.Text);
 	}
 }

@@ -9,6 +9,7 @@ namespace StudyKit
 	public partial class BaseForm : Form
 	{
 		public static Color flatRed = Color.FromArgb(204, 82, 82);
+		public static Color flatLightBlue = Color.FromArgb(135, 173, 253);
 
 		UC_Study uc_study;
 		UC_Edit uc_edit;
