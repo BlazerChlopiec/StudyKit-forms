@@ -10,9 +10,23 @@ namespace StudyKit.UserControls
 		public Prompt currentPrompt { get; private set; }
 		Prompt previousPrompt;
 
+		// if pressed enter and input was incorrect this is set to true
+		// we use this to show correct answer below and pause for one enter press 
 		bool lastEnterIncorrect;
 
-		int streak;
+
+		// streak
+		private int Streak
+		{
+			get { return streak; }
+			set
+			{
+				streak = value;
+				streakLabel.Text = $"Streak: {streak}";
+			}
+		}
+		private int streak;
+		//
 
 		public UC_Edit uc_edit;
 
@@ -34,7 +48,7 @@ namespace StudyKit.UserControls
 			}
 		}
 
-		public void ProcessAnswer()
+		public void ProcessAnswer() // this is basically "when pressed enter on textBox or the green button"
 		{
 			if (currentPrompt == null)
 			{
@@ -43,8 +57,9 @@ namespace StudyKit.UserControls
 				return;
 			}
 
-			if (lastEnterIncorrect)
+			if (lastEnterIncorrect) // if last enter was incorrect refresh the streak on this enter and RefreshPrompt()
 			{
+				Streak = 0;
 				RefreshPrompt();
 				return;
 			}
@@ -58,14 +73,10 @@ namespace StudyKit.UserControls
 			{
 				RefreshPrompt();
 
-				streak++;
-				StreakUpdate();
+				Streak++;
 			}
 			else
 			{
-				streak = 0;
-				StreakUpdate();
-
 				lastEnterIncorrect = true;
 				promptLabel.ForeColor = Color.FromArgb(204, 82, 82);
 
@@ -110,8 +121,6 @@ namespace StudyKit.UserControls
 				textBox.SelectionLength = 0; // deselect
 			}
 		}
-
-		private void StreakUpdate() => streakLabel.Text = $"Streak: {streak}";
 
 		public void RefreshPrompt()
 		{
