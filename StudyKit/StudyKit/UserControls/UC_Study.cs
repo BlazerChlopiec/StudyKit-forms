@@ -14,6 +14,8 @@ namespace StudyKit.UserControls
 		// we use this to show correct answer below and pause for one enter press 
 		bool lastEnterIncorrect;
 
+		float promptLabelOriginalSize = 21.27f;
+
 
 		// streak
 		private int Streak
@@ -145,6 +147,26 @@ namespace StudyKit.UserControls
 			currentPrompt = GetRandomPrompt();
 
 			promptLabel.Text = currentPrompt.promptText;
+
+			ScalePromptLabel();
+		}
+
+		private void ScalePromptLabel()
+		{
+			promptLabel.Font = new Font(promptLabel.Font.FontFamily, promptLabelOriginalSize, promptLabel.Font.Style);
+
+			SizeF textSize;
+
+			using (Graphics g = promptLabel.CreateGraphics())
+				textSize = g.MeasureString(promptLabel.Text, promptLabel.Font);
+
+			var minFontSize = 10;
+			while (textSize.Width > promptLabel.Width && promptLabel.Font.Size > minFontSize)
+			{
+				promptLabel.Font = new Font(promptLabel.Font.FontFamily, promptLabel.Font.Size - 1, promptLabel.Font.Style);
+				using (Graphics g = promptLabel.CreateGraphics())
+					textSize = g.MeasureString(promptLabel.Text, promptLabel.Font);
+			}
 		}
 
 		private Prompt GetRandomPrompt()
