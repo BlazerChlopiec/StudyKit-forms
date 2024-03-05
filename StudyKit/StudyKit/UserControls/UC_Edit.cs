@@ -56,13 +56,13 @@ namespace StudyKit.UserControls
 			};
 		}
 
-		private void addPromptButton_Click(object sender, EventArgs e) => AddPrompt();
+		private void addPromptButton_Click(object sender, EventArgs e) => AddPrompt(editPromptTextBox.Text, editPromptAnswerTextBox.Text);
 
 		private void AddPrompt(string promptText = "Default", string correctAnswer = "DefaultAnswer", CheckState checkState = CheckState.Checked)
 		{
 			var prompt = new Prompt();
-			prompt.promptText = promptText;
-			prompt.correctAnswer = correctAnswer;
+			prompt.promptText = promptText == string.Empty || string.IsNullOrWhiteSpace(promptText) ? "Default" : promptText;
+			prompt.correctAnswer = correctAnswer == string.Empty || string.IsNullOrWhiteSpace(correctAnswer) ? "DefaultAnswer" : correctAnswer; ;
 			prompt.checkState = checkState;
 
 			promptItemList.Items.Add(prompt);
@@ -169,12 +169,18 @@ namespace StudyKit.UserControls
 			promptItemList.Focus();
 		}
 
-		private void UC_Edit_KeyDown(object sender, KeyEventArgs e)
+		// this is when KeyDown on both prompt editing textBoxes 
+		private void promptEditing_KeyDown(object sender, KeyEventArgs e)
 		{
-			// Add Prompt Shortcut CTRL + N
+			// CTRL + N shortcut
 			if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
 			{
-				AddPrompt();
+				AddPrompt(promptText: editPromptTextBox.Text, correctAnswer: editPromptAnswerTextBox.Text);
+
+				// suppress the *beep* windows sound;
+				e.Handled = true;
+				e.SuppressKeyPress = true;
+				//
 			}
 		}
 	}
