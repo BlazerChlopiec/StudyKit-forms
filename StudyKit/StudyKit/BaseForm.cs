@@ -57,6 +57,7 @@ namespace StudyKit
 		{
 			AddUserControl(uc_study);
 			uc_study.RefreshPrompt();
+			//else uc_study.promptLabel.Text = "---";
 			DarkenButtonAndLock(sender);
 		}
 

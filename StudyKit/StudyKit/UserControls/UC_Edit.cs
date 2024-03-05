@@ -113,6 +113,12 @@ namespace StudyKit.UserControls
 				{
 					var prompts = JsonConvert.DeserializeObject<List<Prompt>>(json);
 
+					if (prompts == null)
+					{
+						MessageBox.Show("JSON Incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return false;
+					}
+
 					ClearAllPrompts(); // clear all prompts before loading new ones
 
 					foreach (var prompt in prompts)

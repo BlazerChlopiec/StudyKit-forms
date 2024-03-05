@@ -124,9 +124,16 @@ namespace StudyKit.UserControls
 
 		public void RefreshPrompt()
 		{
-			if (uc_edit.promptItemList.Items.Count == 0) return;
-
+			lastEnterIncorrect = false;
+			correctLabel.Visible = false;
 			promptLabel.ForeColor = Color.White;
+
+			if (uc_edit.promptItemList.Items.Count == 0)
+			{
+				currentPrompt = null;
+				promptLabel.Text = "---";
+				return;
+			}
 
 			textBox.Enabled = true;
 			textBox.Text = string.Empty;
@@ -138,9 +145,6 @@ namespace StudyKit.UserControls
 			currentPrompt = GetRandomPrompt();
 
 			promptLabel.Text = currentPrompt.promptText;
-
-			correctLabel.Visible = false;
-			lastEnterIncorrect = false;
 		}
 
 		private Prompt GetRandomPrompt()
