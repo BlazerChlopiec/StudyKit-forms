@@ -120,6 +120,7 @@ namespace StudyKit.UserControls
 					}
 
 					ClearAllPrompts(); // clear all prompts before loading new ones
+					uc_study.Streak = 0;
 
 					foreach (var prompt in prompts)
 					{

@@ -18,7 +18,7 @@ namespace StudyKit.UserControls
 
 
 		// streak
-		private int Streak
+		public int Streak
 		{
 			get { return streak; }
 			set
