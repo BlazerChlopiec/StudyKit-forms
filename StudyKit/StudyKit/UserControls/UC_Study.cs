@@ -164,6 +164,6 @@ namespace StudyKit.UserControls
 
 		private void checkButton_Click(object sender, EventArgs e) => ProcessAnswer();
 
-		private void textBox_TextChanged(object sender, EventArgs e) => SpellCheck(input: textBox.Text);
+		private void textBox_TextChanged(object sender, EventArgs e) { if (lastEnterIncorrect) SpellCheck(input: textBox.Text); }
 	}
 }
