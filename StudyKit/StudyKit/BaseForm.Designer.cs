@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
 			this.editButton = new System.Windows.Forms.Button();
 			this.optionPanel = new System.Windows.Forms.Panel();
+			this.macro1 = new System.Windows.Forms.TextBox();
 			this.quitButton = new System.Windows.Forms.Button();
 			this.studyButton = new System.Windows.Forms.Button();
 			this.basePanel = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@
 			// optionPanel
 			// 
 			this.optionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+			this.optionPanel.Controls.Add(this.macro1);
 			this.optionPanel.Controls.Add(this.quitButton);
 			this.optionPanel.Controls.Add(this.studyButton);
 			this.optionPanel.Controls.Add(this.editButton);
@@ -66,6 +68,25 @@
 			this.optionPanel.Size = new System.Drawing.Size(634, 100);
 			this.optionPanel.TabIndex = 3;
 			this.optionPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.optionPanel_MouseDown);
+			// 
+			// macro1
+			// 
+			this.macro1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.macro1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.macro1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.macro1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(28)))), ((int)(((byte)(56)))));
+			this.macro1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.macro1.Font = new System.Drawing.Font("Yu Gothic", 17F, System.Drawing.FontStyle.Bold);
+			this.macro1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
+			this.macro1.Location = new System.Drawing.Point(288, 34);
+			this.macro1.Name = "macro1";
+			this.macro1.Size = new System.Drawing.Size(31, 37);
+			this.macro1.TabIndex = 0;
+			this.macro1.TabStop = false;
+			this.macro1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.macro1.WordWrap = false;
 			// 
 			// quitButton
 			// 
@@ -127,6 +148,7 @@
 			this.Name = "BaseForm";
 			this.Text = "StudyKit";
 			this.optionPanel.ResumeLayout(false);
+			this.optionPanel.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -139,6 +161,7 @@
 		public System.Windows.Forms.Button quitButton;
 		public System.Windows.Forms.Button studyButton;
 		private System.Windows.Forms.Panel basePanel;
+		private System.Windows.Forms.TextBox macro1;
 	}
 }
 

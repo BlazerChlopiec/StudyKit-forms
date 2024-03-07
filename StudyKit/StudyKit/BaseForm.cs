@@ -1,5 +1,6 @@
 ﻿using StudyKit.UserControls;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -13,6 +14,8 @@ namespace StudyKit
 
 		UC_Study uc_study;
 		UC_Edit uc_edit;
+
+		List<TextBox> macros = new List<TextBox>();
 
 		Button currentButton;
 		Color previousButtonColor;
@@ -37,6 +40,42 @@ namespace StudyKit
 			uc_study.uc_edit = uc_edit;
 
 			DarkenButtonAndLock(studyButton);
+
+			InitializeMacros();
+		}
+
+		private void InitializeMacros()
+		{
+			macros.Add(macro1);
+
+			var macroAmount = 5;
+			for (int i = 0; i < macroAmount; i++)
+			{
+				var macro = macro1.Clone();
+				macros.Add(macro);
+				macro.Location = new Point(macro1.Location.X + 39 * i, macro1.Location.Y);
+				macro.Show();
+			}
+
+			foreach (var macro in macros)
+			{
+				macro.MouseDoubleClick += new MouseEventHandler((o, e) =>
+				{
+					if (macro.TextLength > 0)
+					{
+						uc_study.textBox.Text += macro.Text;
+						macro.SelectionLength = 0;
+						macro.SelectionStart = 1;
+					}
+				});
+
+				// character limit
+				macro.TextChanged += new EventHandler((s, o) =>
+				{
+					macro.Text = macro.Text.Substring(0, 1);
+					macro.SelectionStart = 1;
+				});
+			}
 		}
 
 		private void AddUserControl(UserControl uc)
@@ -50,6 +89,7 @@ namespace StudyKit
 		private void editButton_click(object sender, System.EventArgs e)
 		{
 			AddUserControl(uc_edit);
+			macros.ForEach((m) => { m.Enabled = false; });
 			DarkenButtonAndLock(sender);
 		}
 
@@ -57,7 +97,7 @@ namespace StudyKit
 		{
 			AddUserControl(uc_study);
 			uc_study.RefreshPrompt();
-			//else uc_study.promptLabel.Text = "---";
+			macros.ForEach((m) => { m.Enabled = true; });
 			DarkenButtonAndLock(sender);
 		}
 

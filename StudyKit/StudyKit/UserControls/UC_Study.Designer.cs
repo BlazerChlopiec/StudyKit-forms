@@ -122,7 +122,7 @@
 		public System.Windows.Forms.Label correctLabel;
 		public System.Windows.Forms.Label promptLabel;
 		public System.Windows.Forms.Button checkButton;
-		private System.Windows.Forms.RichTextBox textBox;
+		public System.Windows.Forms.RichTextBox textBox;
 		public System.Windows.Forms.Label streakLabel;
 	}
 }
