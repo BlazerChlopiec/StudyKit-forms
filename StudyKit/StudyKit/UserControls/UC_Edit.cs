@@ -197,8 +197,7 @@ namespace StudyKit.UserControls
 			var macros = BaseForm.macros;
 
 			macros.list.ForEach(macro => { macro.Text = ""; });
-			macros.list.Clear();
-			macros.values = default;
+			macros.values = new string[Macros.macrosAmount];
 		}
 	}
 }

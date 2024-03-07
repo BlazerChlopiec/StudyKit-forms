@@ -69,7 +69,8 @@ namespace StudyKit
 
 				macro.TextChanged += new EventHandler(delegate
 				{
-					macro.Text = macro.Text.Substring(0, 1); // this allows for one character only
+					if (macro.Text.Length > 0)
+						macro.Text = macro.Text.Substring(0, 1); // this allows for one character only
 
 					macro.SelectionStart = 1;
 
