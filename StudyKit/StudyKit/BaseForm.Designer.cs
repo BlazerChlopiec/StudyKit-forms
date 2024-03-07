@@ -82,6 +82,7 @@
 			this.macro1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));
 			this.macro1.Location = new System.Drawing.Point(288, 34);
 			this.macro1.Name = "macro1";
+			this.macro1.ShortcutsEnabled = false;
 			this.macro1.Size = new System.Drawing.Size(31, 37);
 			this.macro1.TabIndex = 0;
 			this.macro1.TabStop = false;

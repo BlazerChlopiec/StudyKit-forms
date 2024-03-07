@@ -57,7 +57,7 @@ namespace StudyKit
 
 			foreach (var macro in macros.list)
 			{
-				macro.MouseDoubleClick += new MouseEventHandler((o, e) =>
+				macro.MouseDoubleClick += new MouseEventHandler(delegate
 				{
 					if (macro.TextLength > 0)
 					{
