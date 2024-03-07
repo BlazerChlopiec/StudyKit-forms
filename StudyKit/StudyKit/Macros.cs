@@ -13,12 +13,6 @@ public class Macros
 	public List<TextBox> list = new List<TextBox>();
 
 
-	public void FeedValues()
-	{
-		for (int i = 0; i < macrosAmount; i++)
-			values[i] = list[i].Text;
-	}
-
 	public void LoadValues(string[] values)
 	{
 		this.values = values;

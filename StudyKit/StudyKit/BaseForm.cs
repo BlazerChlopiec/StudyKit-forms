@@ -67,13 +67,14 @@ namespace StudyKit
 					}
 				});
 
-				macro.KeyPress += new KeyPressEventHandler((s, o) =>
+				macro.TextChanged += new EventHandler(delegate
 				{
-					if (macro.Text.Length != 0)
-						macro.Text = macro.Text.Substring(0, 0); // this allows for one character only
+					macro.Text = macro.Text.Substring(0, 1); // this allows for one character only
 
 					macro.SelectionStart = 1;
-					macros.FeedValues();
+
+					var index = macros.list.IndexOf(macro);
+					macros.values[index] = macro.Text;
 				});
 			}
 		}

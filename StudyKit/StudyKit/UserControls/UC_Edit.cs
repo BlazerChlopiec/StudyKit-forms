@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace StudyKit.UserControls
@@ -82,8 +83,6 @@ namespace StudyKit.UserControls
 				prompts.Add((Prompt)item);
 
 			var jsonContainer = new JsonContainer { prompts = prompts, macros = BaseForm.macros };
-
-
 			string output = JsonConvert.SerializeObject(jsonContainer);
 			var result = saveFileDialog.ShowDialog();
 
@@ -91,7 +90,7 @@ namespace StudyKit.UserControls
 			{
 				string path = saveFileDialog.FileName;
 
-				File.WriteAllText(path, output);
+				File.WriteAllText(path, output, new UTF8Encoding(true));
 			}
 		}
 
