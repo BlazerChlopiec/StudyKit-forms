@@ -1,6 +1,5 @@
 ﻿using StudyKit.UserControls;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -15,7 +14,7 @@ namespace StudyKit
 		UC_Study uc_study;
 		UC_Edit uc_edit;
 
-		List<TextBox> macros = new List<TextBox>();
+		public static Macros macros;
 
 		Button currentButton;
 		Color previousButtonColor;
@@ -46,18 +45,18 @@ namespace StudyKit
 
 		private void InitializeMacros()
 		{
-			macros.Add(macro1);
+			macros = new Macros();
+			macros.list.Add(macro1);
 
-			var macroAmount = 5;
-			for (int i = 0; i < macroAmount; i++)
+			for (int i = 0; i < Macros.macrosAmount - 1; i++)
 			{
 				var macro = macro1.Clone();
-				macros.Add(macro);
-				macro.Location = new Point(macro1.Location.X + 39 * i, macro1.Location.Y);
+				macros.list.Add(macro);
+				macro.Location = new Point(macro1.Location.X + 39 * (i + 1), macro1.Location.Y);
 				macro.Show();
 			}
 
-			foreach (var macro in macros)
+			foreach (var macro in macros.list)
 			{
 				macro.MouseDoubleClick += new MouseEventHandler((o, e) =>
 				{
@@ -69,11 +68,13 @@ namespace StudyKit
 					}
 				});
 
-				// character limit
-				macro.TextChanged += new EventHandler((s, o) =>
+				macro.KeyPress += new KeyPressEventHandler((s, o) =>
 				{
-					macro.Text = macro.Text.Substring(0, 1);
+					if (macro.Text.Length != 0)
+						macro.Text = macro.Text.Substring(0, 0); // this allows for one character only
+
 					macro.SelectionStart = 1;
+					macros.FeedValues();
 				});
 			}
 		}
@@ -89,7 +90,7 @@ namespace StudyKit
 		private void editButton_click(object sender, System.EventArgs e)
 		{
 			AddUserControl(uc_edit);
-			macros.ForEach((m) => { m.Enabled = false; });
+			macros.list.ForEach((m) => { m.Enabled = false; });
 			DarkenButtonAndLock(sender);
 		}
 
@@ -97,7 +98,7 @@ namespace StudyKit
 		{
 			AddUserControl(uc_study);
 			uc_study.RefreshPrompt();
-			macros.ForEach((m) => { m.Enabled = true; });
+			macros.list.ForEach((m) => { m.Enabled = true; });
 			DarkenButtonAndLock(sender);
 		}
 

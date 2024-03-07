@@ -79,11 +79,12 @@ namespace StudyKit.UserControls
 
 			var prompts = new List<Prompt>();
 			foreach (var item in promptItemList.Items)
-			{
 				prompts.Add((Prompt)item);
-			}
 
-			string output = JsonConvert.SerializeObject(prompts);
+			var jsonContainer = new JsonContainer { prompts = prompts, macros = BaseForm.macros };
+
+
+			string output = JsonConvert.SerializeObject(jsonContainer);
 			var result = saveFileDialog.ShowDialog();
 
 			if (result == DialogResult.OK)
@@ -111,9 +112,9 @@ namespace StudyKit.UserControls
 
 				try
 				{
-					var prompts = JsonConvert.DeserializeObject<List<Prompt>>(json);
+					var jsonContainer = JsonConvert.DeserializeObject<JsonContainer>(json);
 
-					if (prompts == null)
+					if (jsonContainer == null || jsonContainer.prompts == null)
 					{
 						MessageBox.Show("JSON Incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return false;
@@ -122,10 +123,11 @@ namespace StudyKit.UserControls
 					ClearAllPrompts(); // clear all prompts before loading new ones
 					uc_study.Streak = 0;
 
-					foreach (var prompt in prompts)
-					{
+					foreach (var prompt in jsonContainer.prompts)
 						AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
-					}
+
+					var values = jsonContainer.macros.values;
+					BaseForm.macros.LoadValues(values);
 
 					return true; // JSON valid
 				}

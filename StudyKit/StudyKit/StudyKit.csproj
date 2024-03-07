@@ -59,6 +59,8 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions.cs" />
+    <Compile Include="JsonContainer.cs" />
+    <Compile Include="Macros.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Prompt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
