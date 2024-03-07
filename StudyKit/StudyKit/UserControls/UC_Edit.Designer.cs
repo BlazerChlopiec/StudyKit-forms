@@ -41,6 +41,7 @@
 			this.removePrompt = new System.Windows.Forms.Button();
 			this.clearPrompts = new System.Windows.Forms.Button();
 			this.swapCollection = new System.Windows.Forms.Button();
+			this.clearMacros = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// promptItemList
@@ -212,10 +213,27 @@
 			this.swapCollection.UseVisualStyleBackColor = false;
 			this.swapCollection.Click += new System.EventHandler(this.swapCollection_Click);
 			// 
+			// clearMacros
+			// 
+			this.clearMacros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+			this.clearMacros.FlatAppearance.BorderSize = 0;
+			this.clearMacros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.clearMacros.Font = new System.Drawing.Font("Yu Gothic", 10.25F, System.Drawing.FontStyle.Bold);
+			this.clearMacros.ForeColor = System.Drawing.Color.White;
+			this.clearMacros.Location = new System.Drawing.Point(428, 265);
+			this.clearMacros.Name = "clearMacros";
+			this.clearMacros.Size = new System.Drawing.Size(156, 27);
+			this.clearMacros.TabIndex = 11;
+			this.clearMacros.TabStop = false;
+			this.clearMacros.Text = "Clear Macros";
+			this.clearMacros.UseVisualStyleBackColor = false;
+			this.clearMacros.Click += new System.EventHandler(this.clearMacros_Click);
+			// 
 			// UC_Edit
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.clearMacros);
 			this.Controls.Add(this.swapCollection);
 			this.Controls.Add(this.clearPrompts);
 			this.Controls.Add(this.removePrompt);
@@ -249,5 +267,6 @@
 		private System.Windows.Forms.OpenFileDialog loadFileDialog;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 		public System.Windows.Forms.Button swapCollection;
+		public System.Windows.Forms.Button clearMacros;
 	}
 }

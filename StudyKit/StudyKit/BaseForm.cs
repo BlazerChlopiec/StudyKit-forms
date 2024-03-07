@@ -29,7 +29,6 @@ namespace StudyKit
 		{
 			InitializeComponent();
 
-
 			uc_study = new UC_Study();
 			AddUserControl(uc_study);
 

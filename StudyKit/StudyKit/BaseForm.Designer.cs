@@ -76,7 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.macro1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.macro1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.macro1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(28)))), ((int)(((byte)(56)))));
+			this.macro1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
 			this.macro1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.macro1.Font = new System.Drawing.Font("Yu Gothic", 17F, System.Drawing.FontStyle.Bold);
 			this.macro1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(173)))), ((int)(((byte)(253)))));

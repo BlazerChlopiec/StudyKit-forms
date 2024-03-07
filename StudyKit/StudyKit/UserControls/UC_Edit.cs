@@ -192,5 +192,14 @@ namespace StudyKit.UserControls
 				//
 			}
 		}
+
+		private void clearMacros_Click(object sender, EventArgs e)
+		{
+			var macros = BaseForm.macros;
+
+			macros.list.ForEach(macro => { macro.Text = ""; });
+			macros.list.Clear();
+			macros.values = default;
+		}
 	}
 }
