@@ -15,7 +15,7 @@ public class Macros
 	public List<TextBox> list = new List<TextBox>();
 
 	[JsonIgnore]
-	Control target;
+	RichTextBox target;
 
 
 	/// <summary>
@@ -29,7 +29,7 @@ public class Macros
 			list[i].Text = values[i];
 	}
 
-	public void InitializeMacros(TextBox prefabMacro, Control target)
+	public void InitializeMacros(TextBox prefabMacro, RichTextBox target)
 	{
 		this.target = target;
 
@@ -66,7 +66,11 @@ public class Macros
 
 		if (macro.TextLength > 0)
 		{
-			target.Text += macro.Text;
+			int startCaretPos = target.SelectionStart;
+
+			target.Text = target.Text.Insert(startCaretPos, macro.Text);
+			target.SelectionStart = startCaretPos + macro.Text.Length;
+
 			macro.SelectionLength = 0;
 			macro.SelectionStart = 1;
 		}
