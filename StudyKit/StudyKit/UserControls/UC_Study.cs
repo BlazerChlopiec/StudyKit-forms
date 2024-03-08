@@ -39,6 +39,17 @@ namespace StudyKit.UserControls
 
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
+			// macros shortcuts CTRL + 123...
+			for (int i = 0; i < Macros.macrosAmount; i++)
+			{
+				if (keyData == (Keys.D1 + i | Keys.Control))
+				{
+					BaseForm.macros.InvokeMacro(i);
+					return true;
+				}
+			}
+			//
+
 			if (ActiveControl == textBox && keyData == Keys.Return)
 			{
 				ProcessAnswer();

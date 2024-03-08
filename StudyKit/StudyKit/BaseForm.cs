@@ -39,45 +39,8 @@ namespace StudyKit
 
 			DarkenButtonAndLock(studyButton);
 
-			InitializeMacros();
-		}
-
-		private void InitializeMacros()
-		{
 			macros = new Macros();
-			macros.list.Add(macro1);
-
-			for (int i = 0; i < Macros.macrosAmount - 1; i++)
-			{
-				var macro = macro1.Clone();
-				macros.list.Add(macro);
-				macro.Location = new Point(macro1.Location.X + 39 * (i + 1), macro1.Location.Y);
-				macro.Show();
-			}
-
-			foreach (var macro in macros.list)
-			{
-				macro.MouseDoubleClick += new MouseEventHandler(delegate
-				{
-					if (macro.TextLength > 0)
-					{
-						uc_study.textBox.Text += macro.Text;
-						macro.SelectionLength = 0;
-						macro.SelectionStart = 1;
-					}
-				});
-
-				macro.TextChanged += new EventHandler(delegate
-				{
-					if (macro.Text.Length > 0)
-						macro.Text = macro.Text.Substring(0, 1); // this allows for one character only
-
-					macro.SelectionStart = 1;
-
-					var index = macros.list.IndexOf(macro);
-					macros.values[index] = macro.Text;
-				});
-			}
+			macros.InitializeMacros(prefabMacro: macro1, uc_study.textBox);
 		}
 
 		private void AddUserControl(UserControl uc)
