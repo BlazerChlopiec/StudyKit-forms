@@ -96,6 +96,7 @@
 			this.editPromptTextBox.Name = "editPromptTextBox";
 			this.editPromptTextBox.Size = new System.Drawing.Size(361, 26);
 			this.editPromptTextBox.TabIndex = 3;
+			this.editPromptTextBox.Enter += new System.EventHandler(this.editPromptTextBox_Enter);
 			this.editPromptTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.promptEditing_KeyDown);
 			// 
 			// editPromptLabel
@@ -121,6 +122,7 @@
 			this.editPromptAnswerTextBox.Name = "editPromptAnswerTextBox";
 			this.editPromptAnswerTextBox.Size = new System.Drawing.Size(361, 26);
 			this.editPromptAnswerTextBox.TabIndex = 5;
+			this.editPromptAnswerTextBox.Enter += new System.EventHandler(this.editPromptAnswerTextBox_Enter);
 			this.editPromptAnswerTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.promptEditing_KeyDown);
 			// 
 			// loadButton

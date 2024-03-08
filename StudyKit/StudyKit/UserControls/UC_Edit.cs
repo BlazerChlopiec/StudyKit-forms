@@ -57,6 +57,21 @@ namespace StudyKit.UserControls
 			};
 		}
 
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+		{
+			// macros shortcuts CTRL + 123...
+			for (int i = 0; i < Macros.macrosAmount; i++)
+			{
+				if (keyData == (Keys.D1 + i | Keys.Control))
+				{
+					BaseForm.macros.InvokeMacro(i);
+					return true;
+				}
+			}
+
+			return base.ProcessCmdKey(ref msg, keyData);
+		}
+
 		private void addPromptButton_Click(object sender, EventArgs e) => AddPrompt(editPromptTextBox.Text, editPromptAnswerTextBox.Text);
 
 		private void AddPrompt(string promptText = "Default", string correctAnswer = "DefaultAnswer", CheckState checkState = CheckState.Checked)
@@ -199,5 +214,9 @@ namespace StudyKit.UserControls
 			macros.list.ForEach(macro => { macro.Text = ""; });
 			macros.values = new string[Macros.macrosAmount];
 		}
+
+		private void editPromptTextBox_Enter(object sender, EventArgs e) => BaseForm.macros.target = editPromptTextBox;
+
+		private void editPromptAnswerTextBox_Enter(object sender, EventArgs e) => BaseForm.macros.target = editPromptAnswerTextBox;
 	}
 }

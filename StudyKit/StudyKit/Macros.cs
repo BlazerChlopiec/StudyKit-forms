@@ -15,7 +15,7 @@ public class Macros
 	public List<TextBox> list = new List<TextBox>();
 
 	[JsonIgnore]
-	RichTextBox target;
+	public object target;
 
 
 	/// <summary>
@@ -29,10 +29,8 @@ public class Macros
 			list[i].Text = values[i];
 	}
 
-	public void InitializeMacros(TextBox prefabMacro, RichTextBox target)
+	public void InitializeMacros(TextBox prefabMacro)
 	{
-		this.target = target;
-
 		list.Add(prefabMacro);
 
 		for (int i = 0; i < Macros.macrosAmount - 1; i++)
@@ -62,14 +60,16 @@ public class Macros
 
 	public void InvokeMacro(int index)
 	{
+		dynamic targetConv = target;
+
 		var macro = list[index];
 
 		if (macro.TextLength > 0)
 		{
-			int startCaretPos = target.SelectionStart;
+			int startCaretPos = targetConv.SelectionStart;
 
-			target.Text = target.Text.Insert(startCaretPos, macro.Text);
-			target.SelectionStart = startCaretPos + macro.Text.Length;
+			targetConv.Text = targetConv.Text.Insert(startCaretPos, macro.Text);
+			targetConv.SelectionStart = startCaretPos + macro.Text.Length;
 
 			macro.SelectionLength = 0;
 			macro.SelectionStart = 1;
