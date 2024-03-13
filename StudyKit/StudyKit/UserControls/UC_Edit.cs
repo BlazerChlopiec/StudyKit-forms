@@ -117,6 +117,8 @@ namespace StudyKit.UserControls
 				LoadFromJSON(loadFileDialog.FileName);
 		}
 
+
+		bool legacyLoad = false;
 		// returns whether the JSON was valid
 		public bool LoadFromJSON(string jsonPath)
 		{
@@ -126,22 +128,41 @@ namespace StudyKit.UserControls
 
 				try
 				{
-					var jsonContainer = JsonConvert.DeserializeObject<JsonContainer>(json);
-
-					if (jsonContainer == null || jsonContainer.prompts == null)
+					if (!legacyLoad)
 					{
-						MessageBox.Show("JSON Incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return false;
+						var jsonContainer = JsonConvert.DeserializeObject<JsonContainer>(json);
+
+						if (jsonContainer == null || jsonContainer.prompts == null)
+						{
+							MessageBox.Show("JSON Incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							return false;
+						}
+
+						ClearAllPrompts(); // clear all prompts before loading new ones
+						uc_study.Streak = 0;
+
+						foreach (var prompt in jsonContainer.prompts)
+							AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
+
+						var values = jsonContainer.macros.values;
+						BaseForm.macros.LoadValues(values);
 					}
+					else if (legacyLoad)
+					{
+						var prompts = JsonConvert.DeserializeObject<List<Prompt>>(json);
 
-					ClearAllPrompts(); // clear all prompts before loading new ones
-					uc_study.Streak = 0;
+						if (prompts == null)
+						{
+							MessageBox.Show("JSON Incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							return false;
+						}
 
-					foreach (var prompt in jsonContainer.prompts)
-						AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
+						ClearAllPrompts(); // clear all prompts before loading new ones
+						uc_study.Streak = 0;
 
-					var values = jsonContainer.macros.values;
-					BaseForm.macros.LoadValues(values);
+						foreach (var prompt in prompts)
+							AddPrompt(prompt.promptText, prompt.correctAnswer, prompt.checkState);
+					}
 
 					return true; // JSON valid
 				}

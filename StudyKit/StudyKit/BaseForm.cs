@@ -55,7 +55,6 @@ namespace StudyKit
 		private void editButton_click(object sender, System.EventArgs e)
 		{
 			AddUserControl(uc_edit);
-			//macros.list.ForEach((m) => { m.Enabled = false; });
 			macros.target = uc_edit.editPromptTextBox;
 			DarkenButtonAndLock(sender);
 		}
@@ -65,7 +64,6 @@ namespace StudyKit
 			AddUserControl(uc_study);
 			uc_study.RefreshPrompt();
 			macros.target = uc_study.textBox;
-			//macros.list.ForEach((m) => { m.Enabled = true; });
 			DarkenButtonAndLock(sender);
 		}
 
