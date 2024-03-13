@@ -15,6 +15,7 @@ namespace StudyKit.UserControls
 		bool lastEnterIncorrect;
 
 		float promptLabelOriginalSize = 21.27f;
+		float correctLabelOriginalSize = 21.27f;
 
 
 		// streak
@@ -84,6 +85,7 @@ namespace StudyKit.UserControls
 
 				correctLabel.Text = correctAnswer;
 				correctLabel.Visible = true;
+				ScaleLabelToContents(correctLabel, correctLabelOriginalSize);
 			}
 		}
 
@@ -148,24 +150,24 @@ namespace StudyKit.UserControls
 
 			promptLabel.Text = currentPrompt.promptText;
 
-			ScalePromptLabel();
+			ScaleLabelToContents(promptLabel, promptLabelOriginalSize);
 		}
 
-		private void ScalePromptLabel()
+		private void ScaleLabelToContents(Label label, float originalSize)
 		{
-			promptLabel.Font = new Font(promptLabel.Font.FontFamily, promptLabelOriginalSize, promptLabel.Font.Style);
+			label.Font = new Font(label.Font.FontFamily, originalSize, label.Font.Style);
 
 			SizeF textSize;
 
-			using (Graphics g = promptLabel.CreateGraphics())
-				textSize = g.MeasureString(promptLabel.Text, promptLabel.Font);
+			using (Graphics g = label.CreateGraphics())
+				textSize = g.MeasureString(label.Text, label.Font);
 
 			var minFontSize = 10;
-			while (textSize.Width > promptLabel.Width && promptLabel.Font.Size > minFontSize)
+			while (textSize.Width > label.Width && label.Font.Size > minFontSize)
 			{
-				promptLabel.Font = new Font(promptLabel.Font.FontFamily, promptLabel.Font.Size - 1, promptLabel.Font.Style);
-				using (Graphics g = promptLabel.CreateGraphics())
-					textSize = g.MeasureString(promptLabel.Text, promptLabel.Font);
+				label.Font = new Font(label.Font.FontFamily, label.Font.Size - 1, label.Font.Style);
+				using (Graphics g = label.CreateGraphics())
+					textSize = g.MeasureString(label.Text, label.Font);
 			}
 		}
 
